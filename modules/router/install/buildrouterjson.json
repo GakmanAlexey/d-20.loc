@@ -1,6 +1,6 @@
 {
-    "generated_at": "2026-02-16 20:07:52",
-    "routes_count": 11,
+    "generated_at": "2026-02-16 21:16:04",
+    "routes_count": 21,
     "routes": [
         {
             "path": "/admin/",
@@ -67,6 +67,66 @@
             "class": "Modules\\Router\\Controller\\Adminajax",
             "method": "start",
             "module": "router"
+        },
+        {
+            "path": "/user/login/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "login",
+            "module": "user"
+        },
+        {
+            "path": "/user/logout/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "logout",
+            "module": "user"
+        },
+        {
+            "path": "/user/login/success/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "login_success",
+            "module": "user"
+        },
+        {
+            "path": "/user/register/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "register",
+            "module": "user"
+        },
+        {
+            "path": "/user/register/success/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "register_success",
+            "module": "user"
+        },
+        {
+            "path": "/user/profile/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "profile",
+            "module": "user"
+        },
+        {
+            "path": "/user/change-password/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "change_password",
+            "module": "user"
+        },
+        {
+            "path": "/user/verify/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "verify_id",
+            "module": "user"
+        },
+        {
+            "path": "/user/verify/success/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "verify_success",
+            "module": "user"
+        },
+        {
+            "path": "/user/verify/failure/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "verify_failure",
+            "module": "user"
         }
     ]
 }

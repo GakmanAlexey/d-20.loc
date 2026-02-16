@@ -3,7 +3,8 @@
         "modules/core/src/css/css.css",
         "modules/core/src/css/footer.css",
         "modules/core/src/css/header.css",
-        "modules/core/src/css/index.css"
+        "modules/core/src/css/index.css",
+        "modules/user/src/css/user.css"
     ],
     "admin":[
         "modules/admin/src/css/admin.css",

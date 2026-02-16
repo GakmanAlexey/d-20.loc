@@ -1,4 +1,5 @@
 <?php
+ob_start();
 define('APP_ROOT', __DIR__);
 define('DS', DIRECTORY_SEPARATOR); 
 // Автозагрузчик

@@ -1,0 +1,13 @@
+.ga_user_container{max-width:720px;margin:20px auto;padding:18px;background:#fff;border:1px solid #eee;border-radius:6px;font-family:Arial,Helvetica,sans-serif}
+.ga_user_title{margin:0 0 12px 0;font-size:20px;color:#222}
+.ga_user_messages{margin-bottom:12px;color:#b00}
+.ga_user_form{display:flex;flex-direction:column;gap:10px}
+.ga_user_label{display:flex;flex-direction:column;font-size:14px;color:#333}
+.ga_user_input{padding:8px;border:1px solid #ccc;border-radius:4px;font-size:14px}
+.ga_user_actions{margin-top:10px;display:flex;gap:10px;align-items:center}
+.ga_user_button{background:#2b6df6;color:#fff;padding:8px 12px;border:none;border-radius:4px;cursor:pointer;text-decoration:none}
+.ga_user_button_secondary{background:#f1f1f1;color:#333;text-decoration:none;padding:8px 12px;border-radius:4px}
+.ga_user_link{color:#2b6df6;text-decoration:none}
+.ga_user_profile{margin:8px 0}
+.ga_user_field{margin:6px 0}
+.ga_user_text{margin:6px 0}

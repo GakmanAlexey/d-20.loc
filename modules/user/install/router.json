@@ -1,0 +1,12 @@
+[
+    ["/user/login/", "Modules\\User\\Controller\\Index", "login"],
+    ["/user/logout/", "Modules\\User\\Controller\\Index", "logout"],
+    ["/user/login/success/", "Modules\\User\\Controller\\Index", "login_success"],
+    ["/user/register/", "Modules\\User\\Controller\\Index", "register"],
+    ["/user/register/success/", "Modules\\User\\Controller\\Index", "register_success"],
+    ["/user/profile/", "Modules\\User\\Controller\\Index", "profile"],
+    ["/user/change-password/", "Modules\\User\\Controller\\Index", "change_password"],
+    ["/user/verify/", "Modules\\User\\Controller\\Index", "verify_id"],
+    ["/user/verify/success/", "Modules\\User\\Controller\\Index", "verify_success"],
+    ["/user/verify/failure/", "Modules\\User\\Controller\\Index", "verify_failure"]
+]
