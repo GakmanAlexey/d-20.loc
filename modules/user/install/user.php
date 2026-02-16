@@ -1,100 +1,97 @@
 <?php
+namespace Modules\User\Modul;
 
-namespace Modules\User\Install;
-
-class User extends \Modules\Abs\Install
+class User
 {
-    public function install_BD()
+    private int $id;
+    private string $login;
+    private string $email;
+    private string $password_hash;
+    private string $token;
+    private bool $is_active;
+    private bool $is_ban;
+    private ?string $reason_ban;
+    private ?string $expiry_ban;
+    private string $status;
+    private ?string $created_at;
+    private ?string $updated_at;
+
+    public function __construct()
     {
-        $p = \Modules\Core\Modul\Env::get("DB_PREFIX");
-        $table = [];
-
-        $table[] = "
-        CREATE TABLE IF NOT EXISTS {$p}users (
-            id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            `login` VARCHAR(100) UNIQUE NOT NULL,
-            `email` VARCHAR(150) NOT NULL,
-            `password_hash` VARCHAR(255) NOT NULL,
-            `name` VARCHAR(255) DEFAULT NULL,
-            `role` VARCHAR(50) DEFAULT 'user',
-            `status` VARCHAR(20) DEFAULT 'active',
-            `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-            `last_login` DATETIME DEFAULT NULL,
-            `avatar` VARCHAR(255) DEFAULT NULL,
-            `browser_info` TEXT DEFAULT NULL,
-            `device_info` TEXT DEFAULT NULL,
-            `ip` VARCHAR(45) DEFAULT NULL,
-            `permissions` TEXT DEFAULT NULL,
-            `groups` TEXT DEFAULT NULL,
-            `preferences` TEXT DEFAULT NULL,
-            `api_tokens` TEXT DEFAULT NULL,
-            `login_attempts` INT DEFAULT 0
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-
-        $table[] = "
-        CREATE TABLE IF NOT EXISTS {$p}user_sessions (
-            id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            user_id INT(12) NOT NULL,
-            token VARCHAR(255) NOT NULL,
-            expires_at DATETIME DEFAULT NULL,
-            ip_address VARCHAR(45) DEFAULT NULL,
-            user_agent TEXT DEFAULT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            INDEX ({$p}user_id_idx) USING BTREE (user_id),
-            FOREIGN KEY (user_id) REFERENCES {$p}users(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-
-        $table[] = "
-        CREATE TABLE IF NOT EXISTS {$p}password_reset_tokens (
-            id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            user_id INT(12) NOT NULL,
-            token VARCHAR(255) NOT NULL,
-            expires_at DATETIME NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (user_id) REFERENCES {$p}users(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-
-        $table[] = "
-        CREATE TABLE IF NOT EXISTS {$p}user_register_tokens (
-            id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            user_id INT(12) NOT NULL,
-            token VARCHAR(255) NOT NULL,
-            expires_at DATETIME NOT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (user_id) REFERENCES {$p}users(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-
-        $table[] = "
-        CREATE TABLE IF NOT EXISTS {$p}user_activity_logs (
-            id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-            user_id INT(12) DEFAULT NULL,
-            action TEXT NOT NULL,
-            ip VARCHAR(45) DEFAULT NULL,
-            user_agent TEXT DEFAULT NULL,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            INDEX (user_id),
-            FOREIGN KEY (user_id) REFERENCES {$p}users(id) ON DELETE SET NULL
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
-
-        // Indexes
-        $table[] = "CREATE INDEX IF NOT EXISTS idx_{$p}users_login ON {$p}users(`login`);";
-        $table[] = "CREATE INDEX IF NOT EXISTS idx_{$p}users_email ON {$p}users(`email`);";
-        $table[] = "CREATE INDEX IF NOT EXISTS idx_{$p}user_sessions_user_id ON {$p}user_sessions(user_id);";
-
-        return $table;
+        $this->id = 0;
+        $this->login = '';
+        $this->email = '';
+        $this->password_hash = '';
+        $this->token = '';
+        $this->is_active = false;
+        $this->is_ban = false;
+        $this->reason_ban = null;
+        $this->expiry_ban = null;
+        $this->status = 'active';
+        $this->created_at = null;
+        $this->updated_at = null;
     }
 
-    public function install_Router()
-    {
-        $routes = [];
+    /* =========================
+     * ID
+     * ========================= */
+    public function getId(): int { return $this->id; }
+    public function setId(int $id): self { $this->id = $id; return $this; }
 
-        return $routes;
-    }
+    /* =========================
+     * Login
+     * ========================= */
+    public function getLogin(): string { return $this->login; }
+    public function setLogin(string $login): self { $this->login = $login; return $this; }
 
-    public function install_Congif()
-    {
-        $conf = [];
-        return $conf;
-    }
+    /* =========================
+     * Email
+     * ========================= */
+    public function getEmail(): string { return $this->email; }
+    public function setEmail(string $email): self { $this->email = $email; return $this; }
+
+    /* =========================
+     * Password Hash
+     * ========================= */
+    public function getPasswordHash(): string { return $this->password_hash; }
+    public function setPasswordHash(string $password_hash): self { $this->password_hash = $password_hash; return $this; }
+
+    /* =========================
+     * Token
+     * ========================= */
+    public function getToken(): string { return $this->token; }
+    public function setToken(string $token): self { $this->token = $token; return $this; }
+
+    /* =========================
+     * Active Status
+     * ========================= */
+    public function isActive(): bool { return $this->is_active; }
+    public function setIsActive(bool $is_active): self { $this->is_active = $is_active; return $this; }
+
+    /* =========================
+     * Ban Status
+     * ========================= */
+    public function isBanned(): bool { return $this->is_ban; }
+    public function setIsBan(bool $is_ban): self { $this->is_ban = $is_ban; return $this; }
+
+    public function getReasonBan(): ?string { return $this->reason_ban; }
+    public function setReasonBan(?string $reason_ban): self { $this->reason_ban = $reason_ban; return $this; }
+
+    public function getExpiryBan(): ?string { return $this->expiry_ban; }
+    public function setExpiryBan(?string $expiry_ban): self { $this->expiry_ban = $expiry_ban; return $this; }
+
+    /* =========================
+     * Status
+     * ========================= */
+    public function getStatus(): string { return $this->status; }
+    public function setStatus(string $status): self { $this->status = $status; return $this; }
+
+    /* =========================
+     * Created / Updated
+     * ========================= */
+    public function getCreatedAt(): ?string { return $this->created_at; }
+    public function setCreatedAt(?string $created_at): self { $this->created_at = $created_at; return $this; }
+
+    public function getUpdatedAt(): ?string { return $this->updated_at; }
+    public function setUpdatedAt(?string $updated_at): self { $this->updated_at = $updated_at; return $this; }
 }
