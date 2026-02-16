@@ -1,0 +1,5770 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #F0F0F0;
+    font-family: 'inter-reg';
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: #444444;
+}
+.a003_main_crm_header{
+    width: 1120px;
+    height: 60px;
+    background: #F0F0F0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;    
+}
+
+
+.a003_main_crm_header_parent_btn{
+    display: flex;
+    margin: 10px 0;
+    gap: 30px;
+
+}
+
+
+.a003_main_crm_header_crm_button{
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    color: #444444;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    background: #E6EBF4;
+    justify-content: center;
+}
+
+.a003_main_crm_header_crm_button img{
+    margin-right: 10px;
+}
+
+
+.a003_main_crm_header_parent_right{
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+}
+.a001_wrapper_lmenu{
+    width: 340px;
+}
+
+.a001_lmenu{
+    display: flex;
+    position: fixed;
+    z-index: 3;
+}
+
+
+
+.a001_lmenu_icon {
+    width: 70px;
+    height: calc(100vh - 16px);
+    background: #000E2F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 16px;
+}
+
+.a001_icon_item{
+    width: 30px;
+    height: 30px;
+}
+
+.a001_icon_item_activ svg path{
+    stroke: #2F6BF2;
+}
+
+
+.a001_user_menu{
+    margin-top: auto;
+    margin-bottom: 30px;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+
+  .a001_wrap_menu_two{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: start;
+  }
+
+
+  
+.a001_menu_two_level_title{
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #444444;
+}
+
+
+.a001_menu_two_level_item{
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #E4E5E6;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+
+.a001_menu_three_level_item{
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: #E4E5E6;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-left: 10px;
+    -webkit-transition: .3s ease-in-out;
+    -moz--transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.a001_name_menu_item{
+    font-size: 14px;
+    color: #444444;
+    margin: 0;
+}
+
+
+.a001_name_menu_item_active{
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+.a001_menu_two_level {
+    width: 240px;
+    background: #E4E5E6;
+    padding-top: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+    height: calc(100vh - 16px);
+}
+
+
+.a001_menu_crm_user_info{
+    margin-top: auto;
+    margin-left: 10px;
+    margin-bottom:  20px;
+    width: 100%;
+
+}
+
+.a001_menu_crm_user_info_botom{
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+
+.a001_menu_crm_user_info_lk{
+    text-decoration: none;
+    color: #444444;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+
+.a001_exit{
+    text-decoration: none;
+    color: #444444;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+
+[data-title] {
+    position: relative; /* Относительное позиционирование */ 
+  }
+  [data-title]::after {
+    content: attr(data-title); /* Выводим текст из атрибута data-title */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 31px; top: -3px; /* Положение подсказки */
+    opacity: 0; /* Скрываем подсказку, делая её прозрачной */
+    transition: 0.5s; /* Время появления подсказки */
+    pointer-events: none; /* Подсказка не реагирует на курсор */
+    background:  #2e68f0;; /* Синий цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    z-index: 100;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  [data-title]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+  }
+
+  
+.hd{
+    display: none !important;
+  }
+
+
+  .a001_lmenu_logo_img{
+    width: 48px;
+  }
+
+.a004_main{
+    width: 1120px;
+    padding: 10px 40px;
+    align-items: start;
+    justify-content: start;
+}
+
+.a004_main_contant{
+    margin-top: 100px;
+}
+
+.a002_notification_crm{
+    width: 300px;
+    height: 100dvh;
+    background: #282C2D;
+    position: fixed;
+    right: 0;
+}
+
+
+.a002_menu_crm_notification{
+
+}
+
+.a002_menu_crm_notification_link{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    padding: 20px;
+
+}
+
+.a002_menu_crm_notification_icon{
+    width: 20px;
+
+}
+
+.a002_menu_crm_notification_name{
+    margin-left: 15px;
+    font-size: 18px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.a002_menu_crm_notification_mob{
+    display: none;
+}
+
+.a002_menu_crm_notification_link_mob{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    padding: 20px;
+    background-color: #282C2D ;
+    margin: 0 10px 0;
+
+}
+
+.a002_menu_crm_notification_icon_mob{
+    width: 20px;
+
+}
+
+
+.a002_notification_crm_content{
+    width: 100%;
+    padding: 0 20px 30px 20px;
+}
+
+.a002_notification_crm_content_item{
+    width: 230px;
+    padding: 15px;
+    background: #363C3E;
+    margin: 20px 0;
+
+}
+
+.a002_notification_crm_content_item_tetle{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+}
+
+.a002_notification_crm_content_item_text{
+    color: #c9c9c9;
+    font-size: 14px;
+    font-weight: 100;
+	font-family: 'InterLight'; 
+    margin: 5px 0;
+    width: 230px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.a002_notification_crm_content_item_button_box{
+    text-align: end;
+}
+
+.a002_notification_crm_content_item_closed{
+    color: #949494;
+    font-size: 12px;
+    font-weight: 300;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.a002_notification_crm_content_item_open{
+    color: #FFF;
+    font-size: 12px;
+    font-weight: 300;
+    display: inline-flex;
+    padding: 5px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #454B4D;
+    text-decoration: none;
+}
+
+.a002_notification_crm_content_item_date_time{
+    color: #868686;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+
+
+   .a011_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a011_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a011_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a011_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+
+  
+.a011_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a011_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a011_thead {
+  }
+
+  .a011_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a011_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a011_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a011_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a011_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a011_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a011_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a011_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a011_td_id{
+    width: 60px;
+  }
+
+  .a011_td_prev{
+    width: 80px; 
+  }
+
+  .a011_td_path{
+    width: 300px;
+  }
+
+  .a011_td_prev_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  
+  
+
+   .a012_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a012_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a012_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #159611;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a012_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+
+
+.a012_upload_wrapper {
+    border: 2px dashed #2F6BF2;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.a012_upload_wrapper:hover .a012_upload_icon {
+    transform:  scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.a012_upload_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.a012_upload_icon {
+    font-size: 36px;
+    color: #2F6BF2;
+    transition: transform 0.3s ease;
+}
+
+.a012_upload_text {
+    font-size: 16px;
+    color: #333;
+}
+
+.a012_upload_buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.a012_btn_choose,
+.a012_btn_paste {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.a012_btn_paste{
+    background: #8f9dbd;
+
+}
+
+.a012_input_file {
+    display: none;
+}
+
+
+.a012_upload_icon_wrapper {
+    position: relative;
+    width: 43px;
+    height: 43px;
+}
+
+.a012_upload_icon svg {
+    width: 43px;
+    height: 43px;
+}
+
+.a012_icon_main {
+    z-index: 2;
+    position: relative;
+}
+
+.a012_icon_side {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.a012_icon_left {
+    left: 0;
+    transform: translateX(-50%) rotate(-15deg) scale(0.8);
+    stroke: #799EF2;
+}
+
+.a012_icon_right {
+    right: 0;
+    transform: translateX(50%) rotate(15deg) scale(0.8);
+    stroke: #799EF2;
+}
+
+/* При наведении показываем боковые */
+.a012_upload_wrapper:hover .a012_icon_left {
+    opacity: 1;
+    transform: translateX(-80%) rotate(-15deg) scale(1);
+}
+
+.a012_upload_wrapper:hover .a012_icon_right {
+    opacity: 1;
+    transform: translateX(80%) rotate(15deg) scale(1);
+}
+
+.a012_upload_text_block {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.a012_upload_heading {
+    font-size: 18px;
+    color: #2F6BF2;
+    font-weight: 600;
+}
+
+.a012_upload_subtext {
+    font-size: 14px;
+    color: #999999;
+}
+
+
+
+  
+.a012_table_wrapper {
+    width: 100%;
+    font-size: 14px;    
+    margin-top: 50px;
+  }
+
+  .a012_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a012_thead {
+  }
+
+  .a012_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a012_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a012_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a012_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a012_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a012_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a012_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a012_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a012_td_id{
+    width: 60px;
+  }
+
+  .a012_td_prev{
+    width: 80px; 
+  }
+
+  .a012_td_path{
+    width: 300px;
+  }
+
+  .a012_td_prev_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+
+  .status-ok { color: #3aa13a; }
+.status-error { color: #d33; }
+.status-waiting { color: #999; }
+
+#a012_drop_zone.dragover {
+  background-color: #2F6BF2; /* синий */
+  transition: background-color 0.3s ease;
+}
+
+   .a005_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a005_header_title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a005_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a005_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+.a005_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a005_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a005_thead {
+  }
+
+  .a005_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a005_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a005_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a005_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a005_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a005_status_icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+  }
+
+  .a005_status_active svg {
+    fill: #28a745;
+  }
+
+  .a005_status_inactive svg {
+    fill: #6c757d;
+  }
+
+  .a005_ban_icon svg {
+    fill: #dc3545;
+  }
+
+  .a005_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a005_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a005_action_button svg {
+    width: 18px;
+    height: 18px;
+    fill: #007bff;
+  }
+
+  .a005_email{
+    width: 360px;
+  }
+
+  .a005_status{
+    width: 60px;
+  }
+
+
+  .a006_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a006_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a006_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a006_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a006_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a006_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a006_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a006_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+.a006_input_field:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a006_has_error {
+  border-color: #FF4D4F;
+}
+
+.a006_has_error .a006_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a006_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+.a006_title_in_user{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.a006_status{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.a006_status_wrapper{
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+
+
+}
+
+.a006_status_information_wrapper{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.a006_status_information_active{
+  color: #2e68f0;
+}
+
+.a006_status_information_no_active{
+  color: #6b6b6b;
+}
+
+.a006_status_button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.a006_ban{
+  display: flex;
+
+}
+
+.a006_ban_wrapper{
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+
+}
+
+.a006_ban_information_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a006_status_button_activate{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #28a745;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.a006_status_button_вan{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #a81212;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;  
+}
+
+.a006_status_button_unban{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #28a745;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.a006_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a006_toast_icon {
+  font-size: 18px;
+}
+
+.a006_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a006_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.a006_date_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.a006_input_field_data {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 36px 8px 12px;
+  font-size: 14px;
+  color: #333;
+  appearance: none;
+  width: 80px;
+  -webkit-appearance: none;
+}
+
+.a006_input_field_data::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.a006_date_icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+}
+
+
+.a006_time_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.a006_input_field_time {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 36px 8px 12px;
+  font-size: 14px;
+  color: #333;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.a006_input_field_time::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.a006_time_icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+}
+
+
+    .b010_news_page{
+    }
+    
+    .b010_page_title {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .b010_tabs_wrapper {
+      background-color: #FFFFFF;
+      padding: 10px 20px;
+      display: flex;
+      gap: 10px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+    }
+
+    .b010_tab {
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background-color: #f3f3f3;
+      color: #000000;
+      cursor: pointer;
+        border: 1px solid #f3f3f3;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .b010_tab:hover{
+        border: 1px solid #2F6BF2;
+      transition: 0.2s;
+    }
+
+    .b010_tab_active {
+      background-color: #2F6BF2;
+      color: #FFFFFF;
+    }
+
+    .b010_news_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .b010_news_card {
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      padding: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      color: #131313;
+      transition: 0.2s;
+    }
+
+    .b010_news_card:hover .b010_news_title {
+      color: #2F6BF2;
+      transition: 0.2s;
+    }
+
+    .b010_news_image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .b010_news_title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: 0.2s;
+    }
+
+    .b010_news_excerpt {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      color: #333333;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .b010_news_date {
+      font-size: 14px;
+      color: #888888;
+    }
+
+    @media (max-width: 992px) {
+      .b010_news_grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .b010_news_grid {
+        grid-template-columns: 1fr;
+      }
+
+      .b010_tab {
+        border-radius: 20px;
+      }
+    }
+
+
+
+    .b011_news_section {
+      background: #F0F0F0;
+      padding: 20px;
+    }
+
+    .b011_news_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .b011_news_title {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .b011_news_button {
+      padding: 7px 26px;
+      background: #2F6BF2;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .b011_news_carousel_wrapper {
+      position: relative;
+    }
+
+    .b011_news_carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+        
+    .b011_news_carousel::-webkit-scrollbar {
+        display: none; /* Chrome, Safari и Opera */
+    }
+
+    .b011_news_card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 10px;
+      flex: 0 0 calc(33.333% - 26.66px);
+      box-sizing: border-box;      
+      text-decoration: none;
+      color: #131313;
+      transition: 0.2s;
+    }
+
+    .b011_news_card:hover .b011_news_title_inner {
+      color: #2F6BF2;
+      transition: 0.2s;
+    }
+
+    .b011_news_image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .b011_news_title_inner {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: 0.2s;
+    }
+
+    .b011_news_excerpt {
+      font-size: 14px;
+      margin: 0 0 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .b011_news_date {
+      font-size: 14px;
+      color: gray;
+    }
+
+    .b011_news_arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgb(255, 255, 255);
+      color: #131313;
+      border: 1px solid #eeeeee;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+
+    .b011_news_carousel_wrapper:hover .b011_news_arrow {
+      opacity: 1;
+    }
+
+    .b011_arrow_left {
+      left: -18px;
+    }
+
+    .b011_arrow_right {
+      right: -18px;
+    }
+
+    .b011_news_arrow[hidden] {
+      display: none !important;
+    }
+
+    
+    
+    .b012_news_page_wrapper {
+      padding: 50px 20px;
+    }
+
+    .b012_news_card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 960px;
+      margin: 0 auto 60px;
+    }
+
+    .b012_news_title {
+      font-size: 36px;
+      color: #000;
+      margin-bottom: 30px;
+    }
+
+    .b012_news_image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .b012_news_text {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .b012_news_footer {
+      font-size: 14px;
+      color: #888;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+
+    /* Блок похожих новостей */
+    .b012_news_related {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .b012_news_related_title {
+      font-size: 36px;
+      margin-bottom: 40px;
+      margin-top: 100px;
+      color: #000;
+    }
+
+    .b012_news_grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .b012_news_item {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 10px;
+      flex: 1 1 calc(33.333% - 27px);
+      display: flex;
+      flex-direction: column;      
+      text-decoration: none;
+      color: #131313;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .b012_news_item:hover .b012_news_item_title {
+      color: #2F6BF2;
+      transition: 0.2s;
+    }
+
+    .b012_news_item_img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .b012_news_item_title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: 0.2s;
+    }
+
+    .b012_news_item_text {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .b012_news_item_date {
+      font-size: 14px;
+      color: #888;
+      margin-top: auto;
+    }
+
+    @media(max-width: 1024px) {
+      .b012_news_item {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+
+    @media(max-width: 768px) {
+      .b012_news_item {
+        flex: 1 1 100%;
+      }
+    }
+.a009_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a009_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a009_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a009_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a009_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a009_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a009_thead {
+  }
+
+  .a009_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a009_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a009_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a009_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a009_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a009_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a009_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a009_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a009_td_id{
+    width: 60px;
+  }
+
+
+
+
+
+  
+  /* Для textarea */
+.a010_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a010_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a010_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a010_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a010_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a010_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a010_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a010_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a010_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a010_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+.a010_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a010_has_error {
+  border-color: #FF4D4F;
+}
+
+.a010_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a010_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a010_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a010_toast_icon {
+  font-size: 18px;
+}
+
+.a010_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a010_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+.a013_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a013_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a013_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a013_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a013_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a013_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a013_thead {
+  }
+
+  .a013_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a013_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a013_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a013_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a013_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a013_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a013_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a013_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a013_td_id{
+    width: 60px;
+  }
+
+  
+
+  
+  /* Для textarea */
+.a014_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a014_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a014_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a014_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a014_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a014_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a014_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a014_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a014_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a014_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+.a014_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a014_has_error {
+  border-color: #FF4D4F;
+}
+
+.a014_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a014_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a014_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a014_toast_icon {
+  font-size: 18px;
+}
+
+.a014_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a014_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a015_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a015_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a015_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a015_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a015_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a015_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a015_thead {
+  }
+
+  .a015_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a015_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a015_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a015_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a015_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a015_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a015_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a015_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a015_td_id{
+    width: 60px;
+  }
+
+  .a015_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a015_td_status_deseible{
+    color: #636363;
+  }
+
+  
+.a016_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a016_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a016_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a016_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a016_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a016_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a016_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a016_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a016_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a016_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+.a016_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a016_has_error {
+  border-color: #FF4D4F;
+}
+
+.a016_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a016_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a016_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a016_toast_icon {
+  font-size: 18px;
+}
+
+.a016_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a016_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+  
+.a017_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a017_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a017_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a017_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a017_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a017_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a017_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a017_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a017_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a017_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+.a017_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a017_has_error {
+  border-color: #FF4D4F;
+}
+
+.a017_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a017_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a017_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a017_toast_icon {
+  font-size: 18px;
+}
+
+.a017_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a017_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.a018_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a018_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a018_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a018_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a018_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a018_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a018_thead {
+  }
+
+  .a018_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a018_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a018_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a018_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a018_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a018_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a018_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a018_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a018_td_id{
+    width: 60px;
+  }
+
+  .a018_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a018_td_status_deseible{
+    color: #636363;
+  }
+
+
+  
+  /* Для textarea */
+.a019_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a019_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a019_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a019_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a019_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a019_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a019_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a019_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a019_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a019_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a019_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a019_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a019_has_error {
+  border-color: #FF4D4F;
+}
+
+.a019_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a019_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a019_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a019_toast_icon {
+  font-size: 18px;
+}
+
+.a019_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a019_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a019_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a019_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a019_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a019_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+
+  /* Для textarea */
+.a020_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a020_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a020_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a020_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a020_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a020_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a020_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a020_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a020_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a020_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a020_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a020_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a020_has_error {
+  border-color: #FF4D4F;
+}
+
+.a020_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a020_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a020_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a020_toast_icon {
+  font-size: 18px;
+}
+
+.a020_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a020_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a020_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a020_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a020_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a020_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+
+
+
+
+  .a021_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a021_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+.a021_service_card {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.a021_service_card_left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.a021_service_icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+}
+
+.a021_service_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.a021_service_name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.a021_service_description {
+    font-size: 16px;
+    color: #808080;
+    max-width: 800px;
+}
+
+.a021_service_btn{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: end;
+  
+}
+
+.a021_service_save_btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.a021_service_save_btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+.a021_loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* полупрозрачный тёмный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none; /* по умолчанию скрыт */
+}
+
+.a021_loading_spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #fff;
+  border-top: 6px solid #007bff; /* синий цвет вращающейся части */
+  border-radius: 50%;
+  animation: a021_spin 1s linear infinite;
+}
+
+@keyframes a021_spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.a021_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none;
+}
+
+.a021_modal_content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 25px 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.a021_modal_title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.a021_modal_text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.a021_modal_button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.a021_modal_button:hover {
+  background-color: #0056b3;
+}
+
+.a021_modal_close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.a021_modal_close:hover {
+  color: #000;
+}
+
+/* Варианты */
+
+.a021_modal_success .a021_modal_title {
+  color: #28a745; /* Зеленый */
+}
+
+.a021_modal_error .a021_modal_title {
+  color: #dc3545; /* Красный */
+}
+
+.a021_modal_warning .a021_modal_title {
+  color: #ffc107; /* Желтый */
+}
+
+/* Для показа вручную */
+.a021_modal.show {
+  display: flex;
+}
+
+.a021_modal_wrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* полупрозрачный тёмный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+   .a007_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a007_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a007_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a007_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a007_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a007_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a007_thead {
+  }
+
+  .a007_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a007_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a007_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a007_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a007_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a007_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a007_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a007_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a007_td_id{
+    width: 60px;
+  }
+
+  
+  /* Для textarea */
+.a008_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a008_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+
+
+
+
+  .a008_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a008_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a008_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a008_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a008_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a008_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a008_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a008_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+.a008_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a008_has_error {
+  border-color: #FF4D4F;
+}
+
+.a008_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a008_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+.a008_title_in_user{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.a008_status{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.a008_status_wrapper{
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+
+
+}
+
+.a008_status_information_wrapper{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.a008_status_information_active{
+  color: #2e68f0;
+}
+
+.a008_status_information_no_active{
+  color: #6b6b6b;
+}
+
+.a008_status_button{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.a008_ban{
+  display: flex;
+
+}
+
+.a008_ban_wrapper{
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+
+}
+
+.a008_ban_information_wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a008_status_button_activate{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #28a745;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.a008_status_button_вan{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #a81212;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;  
+}
+
+.a008_status_button_unban{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #28a745;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.a008_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a008_toast_icon {
+  font-size: 18px;
+}
+
+.a008_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a008_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.a022_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a022_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a022_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a022_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a022_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a022_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a022_thead {
+  }
+
+  .a022_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a022_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a022_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a022_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a022_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a022_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a022_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a022_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a022_td_id{
+    width: 60px;
+  }
+
+  .a022_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a022_td_status_deseible{
+    color: #636363;
+  }
+
+  
+  
+  
+  
+  /* Для textarea */
+.a023_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a023_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a023_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a023_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a023_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a023_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a023_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a023_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a023_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a023_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a023_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a023_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a023_has_error {
+  border-color: #FF4D4F;
+}
+
+.a023_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a023_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a023_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a023_toast_icon {
+  font-size: 18px;
+}
+
+.a023_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a023_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a023_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a023_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a023_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a023_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+
+
+  
+  /* Для textarea */
+.a024_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a024_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a024_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a024_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a024_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a024_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a024_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a024_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a024_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a024_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a024_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a024_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a024_has_error {
+  border-color: #FF4D4F;
+}
+
+.a024_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a024_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a024_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a024_toast_icon {
+  font-size: 18px;
+}
+
+.a024_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a024_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a024_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a024_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a024_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a024_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+.a024_green{
+  background-color: #c1e7d0;
+}
+
+.a024_grey{
+  background-color: #dddddd;
+}
+
+.a025_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a025_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a025_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a025_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+  
+  .a025_add_icon_blue {
+    width: 20px;
+    height: 20px;
+    fill: #2F6BF2;
+  }
+
+
+  
+.a025_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a025_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a025_thead {
+  }
+
+  .a025_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a025_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a025_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a025_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a025_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a025_action_button_long{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #007bff;
+
+  }
+
+  .a025_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a025_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a025_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .a025_td_id{
+    width: 60px;
+  }
+
+  .a025_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a025_td_status_deseible{
+    color: #636363;
+  }
+
+  
+.a025_nested_table_wrapper {
+  margin-top: -15px;
+  background-color: #dfdfdf; /* необязательно — лёгкий фон для отличия */
+  border-radius: 0 0 8px 8px;
+    border-left: #007bff 4px solid;
+
+}
+
+.a025_wrap_variation{
+  margin-left: -4px;
+}
+
+  .a025_tr_body_variable {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  
+  /* Для textarea */
+.a026_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a026_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a026_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a026_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a026_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a026_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a026_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a026_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a026_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a026_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a026_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a026_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a026_has_error {
+  border-color: #FF4D4F;
+}
+
+.a026_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a026_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a026_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a026_toast_icon {
+  font-size: 18px;
+}
+
+.a026_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a026_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a026_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a026_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a026_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a026_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+
+
+  
+  /* Для textarea */
+.a027_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a027_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a027_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a027_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a027_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a027_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a027_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a027_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a027_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a027_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a027_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a027_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a027_has_error {
+  border-color: #FF4D4F;
+}
+
+.a027_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a027_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a027_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a027_toast_icon {
+  font-size: 18px;
+}
+
+.a027_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a027_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a027_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a027_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a027_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a027_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+.a027_green{
+  background-color: #c1e7d0;
+}
+
+.a027_grey{
+  background-color: #dddddd;
+}
+
+    
+  /* Для textarea */
+  .a029_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a029_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a029_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a029_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a029_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a029_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a029_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a029_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a029_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a029_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a029_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a029_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a029_has_error {
+  border-color: #FF4D4F;
+}
+
+.a029_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a029_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a029_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a029_toast_icon {
+  font-size: 18px;
+}
+
+.a029_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a029_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a029_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a029_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a029_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a029_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+
+
+    
+  /* Для textarea */
+  .a030_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a030_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a030_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a030_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a030_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a030_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a030_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a030_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a030_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a030_input_field {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a030_input_field_select {
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a030_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+
+/* Ошибочный стиль */
+.a030_has_error {
+  border-color: #FF4D4F;
+}
+
+.a030_has_error .a008_input_label {
+  color: #FF4D4F;
+}
+
+/* Текст ошибки */
+.a030_error_text {
+  color: #FF4D4F;
+  font-size: 12px;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+
+
+
+
+.a030_toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  width: calc(100% - 32px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.a030_toast_icon {
+  font-size: 18px;
+}
+
+.a030_toast_success {
+  background-color: #e6f6eb;
+  color: #2e7d32;
+  border: 1px solid #c1e7d0;
+}
+
+.a030_toast_error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6c6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.a030_checkbox_wrapper {    
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex: 0 0 calc(50% - 32px); /* если 1 — займет 50% ширины */
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+    justify-content: center;
+}
+
+.a030_checkbox_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a030_checkbox_label {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.a030_checkbox_field {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    accent-color: #2F6BF2; /* Современный способ стилизации checkbox */
+    cursor: pointer;
+}
+
+
+
+.a028_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a028_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a028_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a028_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a028_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a028_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a028_thead {
+  }
+
+  .a028_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a028_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a028_tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .a028_tr_body {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a028_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a028_actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .a028_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a028_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a028_td_id{
+    width: 60px;
+  }
+
+  .a028_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a028_td_status_deseible{
+    color: #636363;
+  }
+
+
+  
+.a032_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a032_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a032_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a032_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a032_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a032_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a032_thead {
+  }
+
+  .a032_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a032_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a032_tbody {
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+    margin-top: 10px;
+
+  }
+
+  .a032_tr_body {
+    display: table;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a032_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a032_actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .a032_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a032_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a032_td_id{
+    width: 320px;
+  }
+
+  .a032_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a032_td_status_deseible{
+    color: #636363;
+  }
+
+
+
+  
+  /* Для textarea */
+.a032_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a032_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a032_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a032_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a032_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a032_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a032_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a032_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a032_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a032_input_field {
+    border: none;
+    padding: 2px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a032_input_field_select {
+    border: none;
+    padding: 2px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a032_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+.a032_btn_box_in{
+    display: flex;
+    justify-content: start;
+    margin-top: 30px;
+}
+
+.a032_actions_wrap{
+    width: 40px;
+}
+
+
+.a031_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a031_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a031_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .a031_add_icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+  }
+
+
+  
+.a031_table_wrapper {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .a031_table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+  }
+
+  .a031_thead {
+  }
+
+  .a031_tr_header {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .a031_th {
+    padding: 10px 15px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .a031_tbody {
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+    margin-top: 10px;
+
+  }
+
+  .a031_tr_body {
+    display: table;
+    table-layout: fixed;
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .a031_td {
+    padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  .a031_actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .a031_action_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .a031_action_button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  .a031_td_id{
+    width: 320px;
+  }
+
+  .a031_td_status_active{
+    color: #0A7E23;
+  }
+
+  .a031_td_status_deseible{
+    color: #636363;
+  }
+
+
+
+  
+  /* Для textarea */
+.a031_input_textarea {
+    border: none;
+    padding: 10px 0;
+    font-size: 16px;
+    background: none;
+    height: 18px;
+    order: 2;
+    outline: none;
+}
+
+.a031_input_textarea:focus + .a006_input_label {
+    color: #2F6BF2;
+}
+
+  .a031_header_block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+  }
+
+  .a031_header_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+  .a031_add_button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 26px;
+    background: #2F6BF2;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+.a031_input_group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.a031_input_wrapper {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #E8E8ED;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+    min-width: 250px; /* можно регулировать под ваш дизайн */
+}
+
+.a031_input_wrapper:hover {
+    border-color: #c5c5c5;
+}
+
+.a031_input_label {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s linear;
+}
+
+.a031_input_field {
+    border: none;
+    padding: 2px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+}
+
+
+.a031_input_field_select {
+    border: none;
+    padding: 2px 0;
+    font-size: 14px;
+    background: none;
+    order: 2;
+    outline: none;
+    appearance: none; /* Убираем стандартную стрелку в большинстве браузеров */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232F6BF2" height="10" viewBox="0 0 24 24" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+
+.a031_input_field:focus + .a008_input_label {
+    color: #2F6BF2;
+}
+
+
+.a031_btn_box_in{
+    display: flex;
+    justify-content: start;
+    margin-top: 30px;
+}
+
+.a031_actions_wrap{
+    width: 40px;
+}

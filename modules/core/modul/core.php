@@ -1,0 +1,81 @@
+<?php
+
+namespace Modules\Core\Modul;
+
+class Core extends \Modules\Abs\Handler{
+
+    public function __construct(){
+
+        $this->initErrorHandling();
+
+        try {
+
+            Env::load();
+
+            if (Env::get("APP_DEBUG") == "true") {
+                $this->APP_DEBUG_TRUE();
+            } else {
+                $this->APP_DEBUG_FALSE();
+            }
+
+            if (Env::get("APP_INSTALL") == "true") {
+                \Modules\Core\Modul\Install::seach_files();
+                $builder = new \Modules\Router\Modul\Builder();                
+                $builder->start();
+                \Modules\Core\Modul\Css::merge_files(false);
+            }
+
+            session_start();
+            \Modules\Core\Modul\Menu::build();          
+            \Modules\Router\Modul\Router::start();
+
+        } catch (\Throwable $e) {
+            $this->handleThrowable($e);
+        }
+    }
+
+    protected function initErrorHandling(){
+
+        set_error_handler(function ($severity, $message, $file, $line) {
+            if (!(error_reporting() & $severity)) return;
+            throw new \ErrorException($message, 0, $severity, $file, $line);
+        });
+
+        register_shutdown_function(function () {
+            $error = error_get_last();
+            if ($error && in_array($error['type'], [
+                E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR
+            ])) {
+                $this->e500([
+                    'error_message' => $error['message'],
+                    'exception' => $error
+                ]);
+            }
+        });
+    }
+
+    protected function handleThrowable(\Throwable $e){
+        $this->e500([
+            'error_message' => $e->getMessage(),
+            'exception' => $e
+        ]);
+    }
+
+    public function APP_DEBUG_TRUE(){
+        error_reporting(E_ALL);
+        ini_set('display_errors', '1');
+        ini_set('display_startup_errors', '1');
+        ini_set('log_errors', '1');
+    }
+
+    public function APP_DEBUG_FALSE(){
+        ini_set('display_errors', '0');
+        ini_set('display_startup_errors', '0');
+        ini_set('log_errors', '1');
+    }
+
+    public function e500(array $context = []){
+        \Modules\Router\Modul\Errorhandler::e500($context);
+        exit;
+    }
+}

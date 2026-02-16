@@ -1,0 +1,15 @@
+{
+    "default":[
+        "modules/core/src/css/css.css",
+        "modules/core/src/css/footer.css",
+        "modules/core/src/css/header.css",
+        "modules/core/src/css/index.css"
+    ],
+    "admin":[
+        "modules/admin/src/css/admin.css",
+        "modules/admin/src/css/header.css",
+        "modules/admin/src/css/lmenu.css",
+        "modules/admin/src/css/main.css",
+        "modules/admin/src/css/rmenu.css"
+    ]
+}
