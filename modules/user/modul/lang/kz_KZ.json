@@ -1,0 +1,14 @@
+{
+    "messages": {
+        "password_too_short": "Құпия сөз кемінде {min_pass} таңбадан тұруы керек",
+        "password_too_long": "Құпия сөз {max_pass} таңбадан ұзын болмауы керек",
+        "passwords_dont_match": "Құпия сөздер сәйкес келмейді",
+        "username_taken": "Пайдаланушы аты алынған",
+        "username_too_short": "Пайдаланушы аты кемінде {min_username} таңбадан тұруы керек",
+        "username_too_long": "Пайдаланушы аты {max_username} таңбадан ұзын болмауы керек",
+        "email_invalid": "Электрондық пошта дұрыс емес форматта",
+        "common_required": "Бұл өріс міндетті",
+        "isset_auth": "Сіз қазір авторизацияланғансыз",
+        "server_error": "Сервер қатесі, кейінірек қайта көріңіз"
+    }
+}

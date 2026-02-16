@@ -1,0 +1,14 @@
+{
+    "messages": {
+        "password_too_short": "Пароль павінен мець мінімум {min_pass} сімвалаў",
+        "password_too_long": "Пароль не павінен перавышаць {max_pass} сімвалаў",
+        "passwords_dont_match": "Паролі не супадаюць",
+        "username_taken": "Імя карыстальніка ўжо занята",
+        "username_too_short": "Імя карыстальніка павінна мець мінімум {min_username} сімвалаў",
+        "username_too_long": "Імя карыстальніка не павінна перавышаць {max_username} сімвалаў",
+        "email_invalid": "Некарэктны фармат email",
+        "common_required": "Поле абавязковае для запаўнення",
+        "isset_auth": "Вы ўжо аўтарызаваны",
+        "server_error": "Памылка сервера, паспрабуйце пазней"
+    }
+}

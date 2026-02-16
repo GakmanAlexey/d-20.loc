@@ -12,7 +12,27 @@ class User
     private bool $is_active;
     private bool $is_ban;
     private string $reason_ban;
-    private string $expiry_ban;
+    private ?string $expiry_ban;
+    private string $status;
+    private ?string $created_at;
+    private ?string $updated_at;
+
+    public function __construct()
+    {
+        $this->id = 0;
+        $this->username = '';
+        $this->email = '';
+        $this->password_hash = '';
+        $this->password = '';
+        $this->token = '';
+        $this->is_active = false;
+        $this->is_ban = false;
+        $this->reason_ban = '';
+        $this->expiry_ban = null;
+        $this->status = 'active';
+        $this->created_at = null;
+        $this->updated_at = null;
+    }
 
     /* =========================
      * ID

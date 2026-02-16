@@ -1,0 +1,14 @@
+{
+    "messages": {
+        "password_too_short": "Parol kamida {min_pass} belgidan iborat bo‘lishi kerak",
+        "password_too_long": "Parol {max_pass} belgidan uzun bo‘lmasligi kerak",
+        "passwords_dont_match": "Parollar mos kelmayapti",
+        "username_taken": "Foydalanuvchi nomi band",
+        "username_too_short": "Foydalanuvchi nomi kamida {min_username} belgidan iborat bo‘lishi kerak",
+        "username_too_long": "Foydalanuvchi nomi {max_username} belgidan uzun bo‘lmasligi kerak",
+        "email_invalid": "Email noto‘g‘ri formatda",
+        "common_required": "Bu maydon majburiy",
+        "isset_auth": "Siz allaqachon tizimga kirdingiz",
+        "server_error": "Server xatosi, iltimos keyinroq urinib ko‘ring"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "messages": {
+        "password_too_short": "A senha deve ter pelo menos {min_pass} caracteres",
+        "password_too_long": "A senha não pode exceder {max_pass} caracteres",
+        "passwords_dont_match": "As senhas não coincidem",
+        "username_taken": "Nome de usuário já está em uso",
+        "username_too_short": "O nome de usuário deve ter pelo menos {min_username} caracteres",
+        "username_too_long": "O nome de usuário não pode exceder {max_username} caracteres",
+        "email_invalid": "Formato de e-mail inválido",
+        "common_required": "Este campo é obrigatório",
+        "isset_auth": "Você já está logado",
+        "server_error": "Erro no servidor, por favor tente novamente mais tarde"
+    }
+}

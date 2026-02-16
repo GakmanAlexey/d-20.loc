@@ -1,0 +1,14 @@
+{
+    "messages": {
+        "password_too_short": "Das Passwort muss mindestens {min_pass} Zeichen lang sein",
+        "password_too_long": "Das Passwort darf nicht länger als {max_pass} Zeichen sein",
+        "passwords_dont_match": "Die Passwörter stimmen nicht überein",
+        "username_taken": "Benutzername ist bereits vergeben",
+        "username_too_short": "Der Benutzername muss mindestens {min_username} Zeichen lang sein",
+        "username_too_long": "Der Benutzername darf nicht länger als {max_username} Zeichen sein",
+        "email_invalid": "Ungültiges E-Mail-Format",
+        "common_required": "Dieses Feld ist erforderlich",
+        "isset_auth": "Sie sind bereits angemeldet",
+        "server_error": "Serverfehler, bitte versuchen Sie es später erneut"
+    }
+}
