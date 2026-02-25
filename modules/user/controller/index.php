@@ -21,8 +21,7 @@ class Index extends \Modules\Abs\Controller
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
 
-        // Передаем сообщения в представление
-        $messages = $this->messages;
+        $formData = new \Modules\User\Modul\Formdata;
         $this->list_file[] = APP_ROOT . "/modules/user/view/login.php";
         $this->show();
         $this->cashe_end();

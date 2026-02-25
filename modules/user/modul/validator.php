@@ -1,116 +1,158 @@
 <?php
 namespace Modules\User\Modul;
 
-use Modules\Core\Modul\Env;
-
 class Validator
 {
-    private array $limits;
-    private array $messages;
-    private string $langPath;
+    private array $config;
+    private array $lang;
 
     public function __construct()
     {
-        // Загружаем лимиты из config.json
-        $configPath = __DIR__ . '/config.json';
-        if (file_exists($configPath)) {
-            $config = json_decode(file_get_contents($configPath), true);
-            $this->limits = $config['limits'] ?? [];
-        } else {
-            $this->limits = [];
-        }
+        $configPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS . "config.json";
+        $this->config = json_decode(file_get_contents($configPath), true);
 
-        // Загружаем сообщения для выбранного языка
-        $langCode = Env::get('APP_LANGUAGE', 'ru_RU');
-        $this->langPath = __DIR__ . "/lang/{$langCode}.json";
-
-        if (file_exists($this->langPath)) {
-            $langData = json_decode(file_get_contents($this->langPath), true);
-            $this->messages = $langData['messages'] ?? [];
-        } else {
-            $this->messages = [];
-        }
+        $language = Env::get('APP_LANGUAGE') ?: 'ru_RU';
+        $langPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS . "lang" . DS . $language . ".json";
+        $this->lang = json_decode(file_get_contents($langPath), true)['messages'] ?? [];
     }
 
-    /**
-     * Проверка регистрационной формы
-     * @param array $data ['username'=>..., 'email'=>..., 'password'=>..., 'password_confirm'=>...]
-     * @return array массив ошибок
-     */
-    public function validateRegistration(array $data): array
+    /* ==================== PUBLIC ==================== */
+
+    public function validateLogin(Formdata $form): bool
     {
-        $errors = [];
+        $login = trim($form->getLogin());
+        $min = $this->config['limits']['min_username'] ?? 3;
+        $max = $this->config['limits']['max_username'] ?? 20;
 
-        // username
-        $username = trim($data['username'] ?? '');
-        if ($username === '') {
-            $errors['username'] = $this->getMessage('common_required');
-        } else {
-            if (isset($this->limits['min_username']) && mb_strlen($username) < $this->limits['min_username']) {
-                $errors['username'] = $this->replacePlaceholders(
-                    $this->getMessage('username_too_short'),
-                    ['min_username' => $this->limits['min_username']]
-                );
-            }
-            if (isset($this->limits['max_username']) && mb_strlen($username) > $this->limits['max_username']) {
-                $errors['username'] = $this->replacePlaceholders(
-                    $this->getMessage('username_too_long'),
-                    ['max_username' => $this->limits['max_username']]
-                );
-            }
+        if (empty($login)) {
+            $form->addMsg($this->lang['common_required']);
+            return false;
         }
 
-        // email
-        $email = trim($data['email'] ?? '');
-        if ($email === '') {
-            $errors['email'] = $this->getMessage('common_required');
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors['email'] = $this->getMessage('email_invalid');
+        if (mb_strlen($login) < $min) {
+            $form->addMsg(str_replace('{min_username}', $min, $this->lang['username_too_short']));
+            return false;
         }
 
-        // password
-        $password = $data['password'] ?? '';
-        $passwordConfirm = $data['password_confirm'] ?? '';
-        if ($password === '') {
-            $errors['password'] = $this->getMessage('common_required');
-        } else {
-            if (isset($this->limits['min_pass']) && mb_strlen($password) < $this->limits['min_pass']) {
-                $errors['password'] = $this->replacePlaceholders(
-                    $this->getMessage('password_too_short'),
-                    ['min_pass' => $this->limits['min_pass']]
-                );
-            }
-            if (isset($this->limits['max_pass']) && mb_strlen($password) > $this->limits['max_pass']) {
-                $errors['password'] = $this->replacePlaceholders(
-                    $this->getMessage('password_too_long'),
-                    ['max_pass' => $this->limits['max_pass']]
-                );
-            }
-
-            if ($password !== $passwordConfirm) {
-                $errors['password_confirm'] = $this->getMessage('passwords_dont_match');
-            }
+        if (mb_strlen($login) > $max) {
+            $form->addMsg(str_replace('{max_username}', $max, $this->lang['username_too_long']));
+            return false;
         }
 
-        return $errors;
+        if (!$this->isUsernameAvailable($login)) {
+            $form->addMsg($this->lang['username_taken']);
+            return false;
+        }
+
+        return true;
     }
 
-    /**
-     * Получить сообщение из lang
-     */
-    private function getMessage(string $key): string
+    public function validateEmail(Formdata $form): bool
     {
-        return $this->messages[$key] ?? $key;
+        $email = trim($form->getEmail());
+
+        if (empty($email)) {
+            $form->addMsg($this->lang['common_required']);
+            return false;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $form->addMsg($this->lang['email_invalid']);
+            return false;
+        }
+
+        return true;
     }
 
-    /**
-     * Подставить плейсхолдеры {min_pass}, {max_username} и т.д.
-     */
-    private function replacePlaceholders(string $message, array $replacements): string
+    public function validatePassword(Formdata $form): bool
     {
-        foreach ($replacements as $key => $value) {
-            $message = str_replace("{" . $key . "}", (string)$value, $message);
+        $password = $form->getPassword();
+        $min = $this->config['limits']['min_pass'] ?? 8;
+        $max = $this->config['limits']['max_pass'] ?? 32;
+
+        if (empty($password)) {
+            $form->addMsg($this->lang['common_required']);
+            return false;
         }
-        return $message;
+
+        if (mb_strlen($password) < $min) {
+            $form->addMsg(str_replace('{min_pass}', $min, $this->lang['password_too_short']));
+            return false;
+        }
+
+        if (mb_strlen($password) > $max) {
+            $form->addMsg(str_replace('{max_pass}', $max, $this->lang['password_too_long']));
+            return false;
+        }
+
+        return true;
+    }
+
+    public function validatePasswordConfirm(Formdata $form): bool
+    {
+        if ($form->getPassword() !== $form->getPasswordConfirm()) {
+            $form->addMsg($this->lang['passwords_dont_match']);
+            return false;
+        }
+
+        return true;
+    }
+
+    public function validateCsrf(Formdata $form): bool
+    {
+        if (!\Modules\Core\Modul\Csrftoken::validateToken($form->getToken())) {
+            $form->addMsg($this->lang['server_error']);
+            return false;
+        }
+
+        return true;
+    }
+
+    /* ==================== GROUP VALIDATORS ==================== */
+
+    public function validateAuth(Formdata $form): bool
+    {
+        if (!$this->validateCsrf($form)) return false;
+        if (!$this->validateLogin($form)) return false;
+        if (!$this->validatePassword($form)) return false;
+
+        return true;
+    }
+
+    public function validateRegister(Formdata $form): bool
+    {
+        if (!$this->validateCsrf($form)) return false;
+        if (!$this->validateLogin($form)) return false;
+        if (!$this->validateEmail($form)) return false;
+        if (!$this->validatePassword($form)) return false;
+        if (!$this->validatePasswordConfirm($form)) return false;
+
+        return true;
+    }
+
+    /* ==================== PRIVATE ==================== */
+
+    private function isUsernameAvailable(string $login): bool
+    {
+        $pdo = \Modules\Core\Modul\Sql::connect();
+
+        try {
+            $stmt = $pdo->prepare("
+                SELECT 1 
+                FROM ".\Modules\Core\Modul\Env::get("DB_PREFIX")."users 
+                WHERE username = :username 
+                LIMIT 1
+            ");
+
+            $stmt->execute([
+                ':username' => $login
+            ]);
+
+            return !((bool) $stmt->fetchColumn());
+
+        } catch (\PDOException $e) {
+            error_log("Username check error: " . $e->getMessage());
+            return false; // в случае ошибки безопаснее считать, что логин занят
+        }
     }
 }

@@ -3,52 +3,118 @@ namespace Modules\User\Modul;
 
 class Formdata
 {
-    // Основные поля формы
-    private ?string $login = null;
-    private ?string $email = null;
-    private ?string $password = null;
-    private ?string $password_confirm = null;
-    private ?string $token = null;
+    private $login = null;
+    private $email = null;
+    private $password = null;
+    private $password_confirm = null;
+    private $token = null;
+    private $status = false;
+    private $msg = [];
 
-    // Дополнительно для восстановления, редактирования и т.д.
-    private ?string $status = null;
-    private ?string $reason_ban = null;
-
-    // Геттеры и сеттеры
-    public function getLogin(): ?string { return $this->login; }
-    public function setLogin(?string $login): self { $this->login = trim($login); return $this; }
-
-    public function getEmail(): ?string { return $this->email; }
-    public function setEmail(?string $email): self { $this->email = trim($email); return $this; }
-
-    public function getPassword(): ?string { return $this->password; }
-    public function setPassword(?string $password): self { $this->password = $password; return $this; }
-
-    public function getPasswordConfirm(): ?string { return $this->password_confirm; }
-    public function setPasswordConfirm(?string $password_confirm): self { $this->password_confirm = $password_confirm; return $this; }
-
-    public function getToken(): ?string { return $this->token; }
-    public function setToken(?string $token): self { $this->token = $token; return $this; }
-
-    public function getStatus(): ?string { return $this->status; }
-    public function setStatus(?string $status): self { $this->status = $status; return $this; }
-
-    public function getReasonBan(): ?string { return $this->reason_ban; }
-    public function setReasonBan(?string $reason_ban): self { $this->reason_ban = $reason_ban; return $this; }
-
-    /**
-     * Заполнить объект данными из массива ($_POST или $_GET)
-     */
-    public function fillFromArray(array $data): self
+    public function setFromArray(array $data)
     {
         if (isset($data['login'])) $this->setLogin($data['login']);
         if (isset($data['email'])) $this->setEmail($data['email']);
         if (isset($data['password'])) $this->setPassword($data['password']);
         if (isset($data['password_confirm'])) $this->setPasswordConfirm($data['password_confirm']);
         if (isset($data['token'])) $this->setToken($data['token']);
-        if (isset($data['status'])) $this->setStatus($data['status']);
-        if (isset($data['reason_ban'])) $this->setReasonBan($data['reason_ban']);
-
         return $this;
+    }
+
+    public function setFromForma()
+    {
+        if (isset($_POST['login'])) $this->setLogin($_POST['login']);
+        if (isset($_POST['email'])) $this->setEmail($_POST['email']);
+        if (isset($_POST['password'])) $this->setPassword($_POST['password']);
+        if (isset($_POST['password_confirm'])) $this->setPasswordConfirm($_POST['password_confirm']);
+        if (isset($_POST['token'])) $this->setToken($_POST['token']);
+        return $this;
+    }
+
+    /* ========== SETTERS ========== */
+
+    public function setLogin($login)
+    {
+        $this->login = $login;
+        return $this;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    public function setPasswordConfirm($password_confirm)
+    {
+        $this->password_confirm = $password_confirm;
+        return $this;
+    }
+
+    public function setToken($token)
+    {
+        $this->token = $token;
+        return $this;
+    }
+
+    public function setStatus(bool $status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    public function setMsg(array $msg)
+    {
+        $this->msg = $msg;
+        return $this;
+    }
+
+    public function addMsg(string $message)
+    {
+        $this->msg[] = $message;
+        return $this;
+    }
+
+    /* ========== GETTERS ========== */
+
+    public function getLogin(): ?string
+    {
+        return $this->login;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function getPasswordConfirm(): ?string
+    {
+        return $this->password_confirm;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function getStatus(): bool
+    {
+        return $this->status;
+    }
+
+    public function getMsg(): array
+    {
+        return $this->msg;
     }
 }
