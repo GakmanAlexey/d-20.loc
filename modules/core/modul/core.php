@@ -26,6 +26,7 @@ class Core extends \Modules\Abs\Handler{
             }
 
             session_start();
+            $csrfToken = \Modules\Core\Modul\Csrftoken::getToken();
             \Modules\Core\Modul\Menu::build();          
             \Modules\Router\Modul\Router::start();
 
