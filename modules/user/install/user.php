@@ -20,6 +20,17 @@ class User  extends \Modules\Abs\Install{
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )            
         ';
+        $table[] = '
+            CREATE TABLE '.\Modules\Core\Modul\Env::get("DB_PREFIX").'users_mail_status (
+            id INT(12) PRIMARY KEY AUTO_INCREMENT,
+            id_user INT(12) NOT NULL, 
+            token_hash VARCHAR(255) NOT NULL, 
+            type VARCHAR(50) NOT NULL, 
+            expires_at DATETIME NOT NULL, 
+            used_at DATETIME DEFAULT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )            
+        ';
 
         return $table;
     }

@@ -8,7 +8,7 @@ class Hash
      */
     private static function salt(): string
     {
-        return Env::get("APP_SALT") ?? '';
+        return \Modules\Core\Modul\Env::get("APP_SALT") ?? '';
     }
 
     /**

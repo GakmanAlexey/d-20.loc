@@ -31,6 +31,16 @@ class Formdata
         return $this;
     }
 
+    public function toArray(): array
+    {
+        return [
+            'login' => $this->login,
+            'email' => $this->email,
+            'password' => $this->password,
+            'password_confirm' => $this->password_confirm,
+            'token' => $this->token
+        ];
+    }
     /* ========== SETTERS ========== */
 
     public function setLogin($login)

@@ -13,17 +13,19 @@ class Register
         $this->saveToBD($user);
         //Логирование регистрации
         $this->addToLogs($user);
-        return ["status":true, "msg": ""];
+        $this->sandMail($user);
+        return ["status" => true, "msg" => ""];
         
     }
 
     public function validator(Formdata $form)
     {
         $valid = new \Modules\User\Modul\Validator;
-        if($valid->validateLogin($form)){
-            return ["status":true, "msg": ""];
+
+        if($valid->validateRegister($form)){
+            return ["status"=>true, "msg"=>""];
         }else{
-            return ["status":false, "msg": $form->getMsg()];
+            return ["status"=>false, "msg"=>$form->getMsg()];
         }
     }
     public function createUser(Formdata $form)
@@ -101,6 +103,34 @@ class Register
             $logger->loging('user', $message); // 'user' — модуль
         } catch (\Exception $e) {
             error_log('user Logger Fallback: ' . $message);
+        }
+    }
+
+    public function sandMail(\Modules\User\Modul\User $user): void
+    {
+        try {
+
+            $mailer = new \Modules\User\Modul\Mailer();
+            $result = $mailer->createConfirmToken($user);
+
+            if(!$result["success"]) {
+
+                $logger = new \Modules\Core\Modul\Logs();
+                $logger->loging(
+                    'user',
+                    "Ошибка отправки письма подтверждения пользователю ID={$user->getId()}: ".$result["message"]
+                );
+
+            }
+
+        } catch (\Exception $e) {
+
+            $logger = new \Modules\Core\Modul\Logs();
+            $logger->loging(
+                'user',
+                "Исключение при отправке письма пользователю ID={$user->getId()}: ".$e->getMessage()
+            );
+
         }
     }
 }

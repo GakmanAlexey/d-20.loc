@@ -11,7 +11,7 @@ class Validator
         $configPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS . "config.json";
         $this->config = json_decode(file_get_contents($configPath), true);
 
-        $language = Env::get('APP_LANGUAGE') ?: 'ru_RU';
+        $language = \Modules\Core\Modul\Env::get('APP_LANGUAGE') ?: 'ru_RU';
         $langPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS . "lang" . DS . $language . ".json";
         $this->lang = json_decode(file_get_contents($langPath), true)['messages'] ?? [];
     }
