@@ -86,7 +86,9 @@ class Mailer
             <p>Если вы не регистрировались — просто проигнорируйте это письмо.</p>
         ";
         
-        return Mail::send($email, $subject, $body);
+        return \Modules\Mail\Modul\Mail::send($email, $subject, $body);
+
+        
     }
 
     /**

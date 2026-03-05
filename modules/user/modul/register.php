@@ -112,7 +112,6 @@ class Register
 
             $mailer = new \Modules\User\Modul\Mailer();
             $result = $mailer->createConfirmToken($user);
-
             if(!$result["success"]) {
 
                 $logger = new \Modules\Core\Modul\Logs();
