@@ -21,7 +21,54 @@ class Index extends \Modules\Abs\Controller
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
 
-        $formData = new \Modules\User\Modul\Formdata;
+        // Инициализируем переменные для представления
+        $messages = '';
+        $errors = [];
+        $formData = [];
+        $success = false;
+
+        // Обработка POST-запроса
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['auth_button'])) {
+            
+            // Запускаем сессию для CSRF если еще не запущена
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            
+            // Создаем объект Formdata из POST данных
+            $form = new \Modules\User\Modul\Formdata();
+            $form->setFromForma();
+            
+            // Сохраняем введенный логин для отображения в форме
+            $formData = [
+                'login' => $form->getLogin()
+            ];
+            
+            // Создаем экземпляр Login и пробуем авторизоваться
+            $login = new \Modules\User\Modul\Login();
+            $result = $login->authUser($form);
+            
+            if ($result["status"]) {
+                // Успешная авторизация - редирект в личный кабинет
+                header('Location: /user/profile/');
+                exit;
+            } else {
+                // Ошибки авторизации
+                $errors = $result["msg"];
+                // Формируем сообщение об ошибках
+                $messages = '<div class="ga_user_error">';
+                foreach ($errors as $error) {
+                    $messages .= '<p>' . htmlspecialchars($error) . '</p>';
+                }
+                $messages .= '</div>';
+            }
+        }
+
+        // Передаем переменные в представление
+        $this->data_view["messages"] = $messages;
+        $this->data_view["errors"] = $errors;
+        $this->data_view["formData"] = $formData;
+        
         $this->list_file[] = APP_ROOT . "/modules/user/view/login.php";
         $this->show();
         $this->cashe_end();
@@ -29,9 +76,29 @@ class Index extends \Modules\Abs\Controller
 
     public function logout()
     {
-        $auth = new \Modules\User\Modul\Service;
-        $auth->logout();
-        $this->redirect('/');
+        // Запускаем сессию
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        
+        // Очищаем сессию
+        $_SESSION = array();
+        
+        // Уничтожаем куки сессии
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+        
+        // Уничтожаем сессию
+        session_destroy();
+        
+        // Редирект на главную или страницу входа
+        header('Location: /user/login/');
+        exit;
     }
 
    public function register()

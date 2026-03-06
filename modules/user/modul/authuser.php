@@ -95,4 +95,6 @@ class Authuser extends User
     {
         return Hash::verify($password, $this->getPasswordHash());
     }
+
+   
 }

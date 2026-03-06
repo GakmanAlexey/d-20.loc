@@ -17,5 +17,4 @@ spl_autoload_register(function ($className) {
 });
 
 $Core = new \Modules\Core\Modul\Core;
-
 ?>
