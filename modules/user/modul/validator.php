@@ -46,6 +46,29 @@ class Validator
 
         return true;
     }
+    public function validateLoginA(Formdata $form): bool
+    {
+        $login = trim($form->getLogin());
+        $min = $this->config['limits']['min_username'] ?? 3;
+        $max = $this->config['limits']['max_username'] ?? 20;
+
+        if (empty($login)) {
+            $form->addMsg($this->lang['common_required']);
+            return false;
+        }
+
+        if (mb_strlen($login) < $min) {
+            $form->addMsg(str_replace('{min_username}', $min, $this->lang['username_too_short']));
+            return false;
+        }
+
+        if (mb_strlen($login) > $max) {
+            $form->addMsg(str_replace('{max_username}', $max, $this->lang['username_too_long']));
+            return false;
+        }
+
+        return true;
+    }
 
     public function validateEmail(Formdata $form): bool
     {
@@ -113,7 +136,7 @@ class Validator
     public function validateAuth(Formdata $form): bool
     {
         if (!$this->validateCsrf($form)) return false;
-        if (!$this->validateLogin($form)) return false;
+        if (!$this->validateLoginA($form)) return false;
         if (!$this->validatePassword($form)) return false;
 
         return true;
