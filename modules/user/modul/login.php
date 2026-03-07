@@ -11,6 +11,7 @@ class Login
     }
     
     public function authUser(Formdata $form){
+        
         $resultValid = $this->validator($form);
         if(!$resultValid["status"]) {
             // Логируем неудачную попытку из-за ошибки валидации
@@ -74,9 +75,7 @@ class Login
         
         // Поиск пользователя по username или email
         $stmt = $pdo->prepare("
-            SELECT * FROM `{$tableName}` 
-            WHERE username = :username OR email = :username
-        ");
+            SELECT * FROM `{$tableName}` WHERE username = :username ");
         
         $username = $user->getUsername();
         $stmt->bindValue(':username', $username, \PDO::PARAM_STR);
@@ -99,14 +98,11 @@ class Login
         }
         
         // Проверяем, активен ли пользователь
-        error_log("Checking is_active: " . $userData['is_active']);
         if (!$userData['is_active']) {
-            error_log("User not active");
             return ["status" => false, "msg" => ["Учетная запись не активирована"]];
         }
         
         // Проверяем, забанен ли пользователь
-        error_log("Checking is_banned: " . $userData['is_banned']);
         if ($userData['is_banned']) {
             $banMsg = "Пользователь забанен";
             if ($userData['ban_reason']) {
@@ -147,13 +143,13 @@ class Login
         
     } catch (\PDOException $e) {
         
+            var_dump($user,"123");//gakman123123 gakman123123
         $logger = new \Modules\Core\Modul\Logs();
         $logger->loging('user', "Ошибка авторизации: " . $e->getMessage());
         
         $this->authLogger->logFailedAttempt($user->getUsername(), "Ошибка сервера при авторизации");
         
         return ["status" => false, "msg" => ["Ошибка сервера при авторизации"]];
-        
     } catch (\Exception $e) {
         
         $logger = new \Modules\Core\Modul\Logs();

@@ -30,20 +30,13 @@ class Index extends \Modules\Abs\Controller
         // Обработка POST-запроса
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['auth_button'])) {
             
-            // Запускаем сессию для CSRF если еще не запущена
-            if (session_status() === PHP_SESSION_NONE) {
-                session_start();
-            }
-            
             // Создаем объект Formdata из POST данных
             $form = new \Modules\User\Modul\Formdata();
             $form->setFromForma();
-            
             // Сохраняем введенный логин для отображения в форме
             $formData = [
                 'login' => $form->getLogin()
             ];
-            
             // Создаем экземпляр Login и пробуем авторизоваться
             $login = new \Modules\User\Modul\Login();
             $result = $login->authUser($form);
