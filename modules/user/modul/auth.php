@@ -18,8 +18,8 @@ class Auth
 
     public static function init(): void
     {
-        self::$ip = \Modules\User\Modul\Userdata::$getIp();
-        self::$userAgent = \Modules\User\Modul\Userdata::$getAgent();
+        self::$ip = \Modules\User\Modul\Userdata::getIp();
+        self::$userAgent = \Modules\User\Modul\Userdata::getAgent();
 
         if (isset($_SESSION['user_id'])) {
             self::loadUserById($_SESSION['user_id']);

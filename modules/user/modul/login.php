@@ -32,7 +32,6 @@ class Login
         }
         
         // Успешная авторизация
-        $this->addToBd($user);
         $this->addToLogs($user); // Логируем успешный вход
         $this->jobToken($user);
         
@@ -116,7 +115,6 @@ class Login
         }
         
         // Заполняем объект Authuser данными из БД
-        error_log("Filling Authuser object...");
         $user->setId((int)$userData['id'])
             ->setUsername($userData['username'])
             ->setEmail($userData['email'])
@@ -163,12 +161,12 @@ class Login
     {
         $this->authLogger->logSuccessAuth($user);
     }
-    
-    public function addToBd(\Modules\User\Modul\Authuser $user){
-        // TODO: Implement if needed
-    }
-    
-    public function jobToken(\Modules\User\Modul\Authuser $user){
-        // TODO: Implement if needed
+        
+    public function jobToken(\Modules\User\Modul\Authuser $user)
+    {
+        if (!empty($_POST['remember'])) {
+            $remember = new \Modules\User\Modul\Remember();
+            $remember->createTokenForUser($user);
+        }
     }
 }

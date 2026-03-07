@@ -32,6 +32,10 @@ $login = $formData['login'] ?? '';
                 required
             >
         </label>
+        <label class="ga_user_checkbox">
+            <input type="checkbox" name="remember" value="1">
+            Запомнить меня
+        </label>
         
         <?php if (isset($_SESSION['csrf_token'])): ?>
             <input type="hidden" name="token" value="<?= $_SESSION['csrf_token'] ?>">
