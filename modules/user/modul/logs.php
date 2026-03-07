@@ -13,7 +13,7 @@ class Logs
             $pdo = \Modules\Core\Modul\Sql::connect();
             $tableName = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'user_auth_log';
             
-            $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown';
+            $userAgent = \Modules\User\Modul\Userdata::$getAgent();
             $userAgentInfo = $this->parseUserAgent($userAgent);
             $ipAddress = $this->getClientIp();
             
@@ -79,7 +79,7 @@ class Logs
             $pdo = \Modules\Core\Modul\Sql::connect();
             $tableName = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'user_auth_log';
             
-            $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown';
+            $userAgent = \Modules\User\Modul\Userdata::$getAgent();
             $userAgentInfo = $this->parseUserAgent($userAgent);
             $ipAddress = $this->getClientIp();
             
