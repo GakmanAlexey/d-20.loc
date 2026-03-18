@@ -76,7 +76,7 @@ class Mailer
      */
     public function sendConfirmEmail(string $email, string $token): array
     {
-        $link = "https://site.com/user/confirm/?token=" . urlencode($token);
+        $link = \Modules\Core\Modul\Env::get("APP_URL")."/user/register/success/?token=" . urlencode($token);
         $subject = "Подтверждение email";
         $body = "
             <h2>Подтверждение регистрации</h2>

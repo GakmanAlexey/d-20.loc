@@ -1,10 +1,10 @@
 {
-    "generated_at": "2026-03-06 21:20:51",
+    "generated_at": "2026-03-18 10:52:22",
     "sources": {
         "json_routes": 0,
         "sql_routes": 0
     },
-    "routes_count": 21,
+    "routes_count": 24,
     "routes": [
         {
             "path": "/admin/",
@@ -130,6 +130,24 @@
             "path": "/user/verify/failure/",
             "class": "Modules\\User\\Controller\\Index",
             "method": "verify_failure",
+            "module": "user"
+        },
+        {
+            "path": "/user/recovery/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "password_recovery",
+            "module": "user"
+        },
+        {
+            "path": "/user/recovery/step2/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "password_recovery_2step",
+            "module": "user"
+        },
+        {
+            "path": "/user/recovery/success/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "password_recovery_success",
             "module": "user"
         }
     ]

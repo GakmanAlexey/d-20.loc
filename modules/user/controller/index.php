@@ -26,7 +26,6 @@ class Index extends \Modules\Abs\Controller
         $errors = [];
         $formData = [];
         $success = false;
-
         // Обработка POST-запроса
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['auth_button'])) {
             
@@ -177,6 +176,19 @@ class Index extends \Modules\Abs\Controller
         $this->cashe_end();
     }
 
+    
+    public function register_success()
+    {
+        $this->cashe_start();
+        if ($this->cache_isset) return;
+        \Modules\Core\Modul\Head::load();
+        $this->type_show = "default";
+        \Modules\Core\Modul\Resource::load_conf($this->type_show);
+        $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend.php";
+        $this->show();
+        $this->cashe_end();
+    }
+
     public function profile()
     {
         $this->cashe_start();
@@ -237,6 +249,44 @@ class Index extends \Modules\Abs\Controller
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
         $this->list_file[] = APP_ROOT . "/modules/user/view/verifyfailure.php";
+        $this->show();
+        $this->cashe_end();
+    }
+
+    
+
+    public function password_recovery()
+    {
+        $this->cashe_start();
+        if ($this->cache_isset) return;
+        \Modules\Core\Modul\Head::load();
+        $this->type_show = "default";
+        \Modules\Core\Modul\Resource::load_conf($this->type_show);
+        $this->list_file[] = APP_ROOT . "/modules/user/view/passwordrecovery.php";
+        $this->show();
+        $this->cashe_end();
+    } 
+
+    public function password_recovery_2step()
+    {
+        $this->cashe_start();
+        if ($this->cache_isset) return;
+        \Modules\Core\Modul\Head::load();
+        $this->type_show = "default";
+        \Modules\Core\Modul\Resource::load_conf($this->type_show);
+        $this->list_file[] = APP_ROOT . "/modules/user/view/passwordrecovery2step.php";
+        $this->show();
+        $this->cashe_end();
+    }
+
+    public function password_recovery_success()
+    {
+        $this->cashe_start();
+        if ($this->cache_isset) return;
+        \Modules\Core\Modul\Head::load();
+        $this->type_show = "default";
+        \Modules\Core\Modul\Resource::load_conf($this->type_show);
+        $this->list_file[] = APP_ROOT . "/modules/user/view/passwordrecoverysuccess.php";
         $this->show();
         $this->cashe_end();
     }
