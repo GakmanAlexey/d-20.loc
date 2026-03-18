@@ -101,65 +101,44 @@ class Index extends \Modules\Abs\Controller
         \Modules\Core\Modul\Head::load();
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
-
-        // Инициализируем переменные для представления
         $messages = '';
         $errors = [];
         $formData = [];
         $success = false;
 
-        // Обработка POST-запроса
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reg_button'])) {
-            
-            // Запускаем сессию для CSRF если еще не запущена
-            if (session_status() === PHP_SESSION_NONE) {
-                session_start();
-            }
-            
-            // Создаем объект Formdata из POST данных
+                       
             $form = new \Modules\User\Modul\Formdata();
             $form->setFromForma();
             
-            // Сохраняем введенные данные для отображения в форме
             $formData = [
                 'email' => $form->getEmail()
             ];
             
-            // Создаем регистратор и пробуем зарегистрировать
             $register = new \Modules\User\Modul\Register();
             $result = $register->registerUser($form);
             
             if ($result["status"]) {
-                // Успешная регистрация
                 $success = true;
-                // Показываем страницу успеха вместо формы
                 $this->list_file[] = APP_ROOT . "/modules/user/view/register_success.php";
             } else {
-                // Ошибки валидации
                 $errors = $result["msg"];
-                // Формируем сообщение об ошибках
                 $messages = '<div class="ga_user_error">';
                 foreach ($errors as $error) {
                     $messages .= '<p>' . htmlspecialchars($error) . '</p>';
                 }
                 $messages .= '</div>';
-                // Показываем форму снова
                 $this->list_file[] = APP_ROOT . "/modules/user/view/register.php";
             }
         } else {
-            // Просто показываем форму
             $this->list_file[] = APP_ROOT . "/modules/user/view/register.php";
         }
 
-        // ===== ВАЖНО: Передаем переменные через data_view =====
         $this->data_view["messages"] = $messages;
         $this->data_view["errors"] = $errors;
         $this->data_view["formData"] = $formData;
         $this->data_view["success"] = $success;
         
-        // ИЛИ можно так, если хочешь короче:
-        // $this->data_view = array_merge($this->data_view, compact('messages', 'errors', 'formData', 'success'));
-
         $this->show();
         $this->cashe_end();
     }
@@ -184,7 +163,17 @@ class Index extends \Modules\Abs\Controller
         \Modules\Core\Modul\Head::load();
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
-        $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend.php";
+        if(isset($_GET["token"])){
+            $mailer = new \Modules\User\Modul\Mailer;
+            $resVerif  = $mailer->validateConfirmToken($_GET["token"]);
+            if(isset($resVerif["id_user"]) and ($resVerif["id_user"] >= 1)){
+                $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend.php";          
+            }else{
+                $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend_error.php";
+            }
+        }else{            
+            $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend_error.php";
+        }
         $this->show();
         $this->cashe_end();
     }

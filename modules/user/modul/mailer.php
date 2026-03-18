@@ -115,6 +115,8 @@ class Mailer
             // Ищем среди них тот, который подходит
             foreach ($tokens as $row) {
                 if ($this->verifyToken($token, $row['token_hash'])) {
+                    $this->activeUser($row["id_user"]);
+                    $this->markTokenAsUsed($row['id']);
                     return $row;
                 }
             }
@@ -148,5 +150,20 @@ class Mailer
         } catch (\Exception $e) {
             return false;
         }
+    }
+
+    public function activeUser($idUser){
+        $pdo = \Modules\Core\Modul\Sql::connect();
+        $table = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'users';
+
+        $stmt = $pdo->prepare("
+            UPDATE {$table}
+            SET is_active = 1
+            WHERE id = :id
+        ");
+
+        return $stmt->execute([
+            ':id' => $idUser
+        ]);
     }
 }

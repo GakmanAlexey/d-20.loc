@@ -5,13 +5,11 @@ $formData = $this->data_view["formData"] ?? [];
 $login = $formData['login'] ?? '';
 ?>
 <div class="ga_user_container">
-    <h1 class="ga_user_title">Подтверждение почты прошло успешно!</h1>
+    <h1 class="ga_user_title">Ошибка подтверждения почты!</h1>
     
     
         
-        <div class="ga_user_actions">
-            <button type="submit" name="auth_button" class="ga_user_button">Авторизоваться</button>
-        </div>
+        
 </div>
 
 <style>
