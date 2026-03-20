@@ -38,16 +38,16 @@ class Validator
         $min = $this->config['limits']['min_username'] ?? 3;
         $max = $this->config['limits']['max_username'] ?? 20;
 
-        if (empty($userName)) {
+        if (empty($login)) {
             $massager->addError($this->lang["login"]['login_required']);
             return false;
         }
-        if (mb_strlen($userName) < $min) {
-            $massager->addError(str_replace('{min_username}', $min, $this->lang["login"]['username_too_short']));
+        if (mb_strlen($login) < $min) {
+            $form->addMsg(str_replace('{min_username}', $min, $this->lang["login"]['username_too_short']));
             return false;
         }
-        if (mb_strlen($userName) > $max) {
-            $massager->addError(str_replace('{max_username}', $max, $this->lang["login"]['username_too_long']));
+        if (mb_strlen($login) > $max) {
+            $form->addMsg(str_replace('{max_username}', $max, $this->lang["login"]['username_too_long']));
             return false;
         }
         return true;
@@ -63,11 +63,11 @@ class Validator
             return false;
         }
         if (mb_strlen($password) < $min) {
-            $massager->addError(str_replace('{min_pass}', $min, $this->lang["login"]['password_too_short']));
+            $form->addMsg(str_replace('{min_pass}', $min, $this->lang["login"]['password_too_short']));
             return false;
         }
         if (mb_strlen($password) > $max) {
-            $massager->addError(str_replace('{max_pass}', $max, $this->lang["login"]['password_too_long']));
+            $form->addMsg(str_replace('{max_pass}', $max, $this->lang["login"]['password_too_long']));
             return false;
         }
         return true;

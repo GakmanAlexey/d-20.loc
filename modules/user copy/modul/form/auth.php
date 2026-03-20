@@ -17,22 +17,22 @@ class Auth
     }
     
 //сетеры
-    public function setUsername(string $username): self
+    public function setUsername(string $username): void
     {
         $this->username = $username;
         return $this;
     }
-    public function setPassword(string $password): self
+    public function setPassword(string $password): void
     {
         $this->password = $password;
         return $this;
     }
-    public function setRemember(bool $remember): self
+    public function setRemember(bool $remember): void
     {
         $this->remember = $remember;
         return $this;
     }
-    public function setCsrftoken(?string $csrftoken): self
+    public function setCsrftoken(?string $csrftoken): void
     {
         $this->csrftoken = $csrftoken;
         return $this;

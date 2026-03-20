@@ -31,19 +31,13 @@ class login
          $validator = new \Modules\User\Modul\Support\Validator;
          $resultValidator = $validator->validateAuth($massages, $form);
          if(!$resultValidator["status"]){
-            return ["status" => false, "code" => "code_2", "message" => $massages];
+            return ["status" => false, "code" => "code2", "message" => $massages];
          }
          //Здесь будет логика проверки данных из формы, если данные не совпали, то ошибка авторизации
-         $user =\Modules\User\Modul\Entity\User::createEmpty();
-         $user->setUsername($form->getUsername())
-            ->setPassword($form->getPassword());
 
-         $auth = new \Modules\User\Modul\Service\Auth;
-         $resultAuth = $auth->auth($user, $massages);
-         if($resultAuth["status"]){
-            return ["status" => true, "code" => "code_2"];
-         }
 
-         return ["status" => false, "code" => "code_2", "message" => $massages];
+
+
+         return ["status" => true];
    }
 }
