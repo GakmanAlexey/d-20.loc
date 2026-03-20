@@ -14,7 +14,7 @@ class login
          $result = $this->staticAuth($form);
          if ($result["status"]) {
              return $result;
-         }
+         }         
       }
       
       return ["code" => "code_0"];
