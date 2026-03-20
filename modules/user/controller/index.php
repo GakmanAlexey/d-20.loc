@@ -251,6 +251,10 @@ class Index extends \Modules\Abs\Controller
         \Modules\Core\Modul\Head::load();
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recovery_button'])) {
+            $rec = new \Modules\User\Modul\Recovery;
+            $resulrRecovery = $rec->start();
+        }
         $this->list_file[] = APP_ROOT . "/modules/user/view/passwordrecovery.php";
         $this->show();
         $this->cashe_end();

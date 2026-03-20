@@ -29,7 +29,7 @@ $login = $formData['login'] ?? '';
         <?php endif; ?>
         
         <div class="ga_user_actions">
-            <button type="submit" name="auth_button" class="ga_user_button">Востановить</button>
+            <button type="submit" name="recovery_button" class="ga_user_button">Востановить</button>
             <a class="ga_user_link" href="/user/login/">Войти</a>
         </div>
         
