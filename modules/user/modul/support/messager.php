@@ -6,12 +6,12 @@ class Massager
 {
     private array $errors = [];
 
-    public function addError(string $error)
+    public function addError(string $error): static
     {
         $this->errors[] = $error;
         return $this;
     }
-    public function addErrors(array $errors)
+    public function addErrors(array $errors): static
     {
         foreach ($errors as $error) {
             $this->addError($error);
