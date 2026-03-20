@@ -1,0 +1,8 @@
+{
+    "limits": {
+        "min_pass": 8,
+        "max_pass": 32,
+        "min_username": 3,
+        "max_username": 20
+    }
+}
