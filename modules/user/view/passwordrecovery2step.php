@@ -35,9 +35,12 @@ $login = $formData['login'] ?? '';
         <?php if (isset($_SESSION['csrf_token'])): ?>
             <input type="hidden" name="token" value="<?= $_SESSION['csrf_token'] ?>">
         <?php endif; ?>
+        <?php if (isset($_GET["token"])): ?>
+            <input type="hidden" name="tokenmail" value="<?= $_GET["token"] ?>">
+        <?php endif; ?>
         
         <div class="ga_user_actions">
-            <button type="submit" name="auth_button" class="ga_user_button">Сохранить</button>
+            <button type="submit" name="recovery_button" class="ga_user_button">Сохранить</button>
         </div>
         
     </form>
