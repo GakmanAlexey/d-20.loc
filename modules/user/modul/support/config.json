@@ -6,6 +6,7 @@
         "max_username": 20
     },
     "page": {
-        "authComplete": "/"
+        "authComplete": "/",
+        "personalCabinet": "/lc/"
     }
 }

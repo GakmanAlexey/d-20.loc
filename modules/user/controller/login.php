@@ -22,9 +22,8 @@ class Login extends \Modules\Abs\Controller
         $start = new \Modules\User\Modul\Manager\Login();
         $resultJob = $start->start();
         if($resultJob["code"] == "code_1"){
-            $newPage = new \Modules\Core\Controller\E401();
-            $newPage->index();
-            return;
+                header('Location: ' . $this->config["page"]["personalCabinet"]);
+                exit;
         }
         
         if($resultJob["code"] == "code_0"){
