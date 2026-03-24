@@ -8,5 +8,19 @@
     "page": {
         "authComplete": "/",
         "personalCabinet": "/lc/"
+    },
+    "form":{
+        "auth":{
+            "username":"",
+            "password":"",
+            "remember":"",
+            "button":"goAuth"
+        },
+        "register":{
+            "username":"",
+            "password":"",
+            "password2":""
+        }
+
     }
 }
