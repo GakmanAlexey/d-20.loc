@@ -2,7 +2,7 @@
 
 namespace Modules\User\Modul\Support;
 
-class Massager
+class Messenger
 {
     private array $errors = [];
 

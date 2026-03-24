@@ -2,10 +2,15 @@
 
 namespace Modules\User\Controller;
 
-class Index extends \Modules\Abs\Controller
+class Login extends \Modules\Abs\Controller
 {
+    public $config;
 
-
+    public function __construct()
+    {
+        $configPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS .  "support" . DS ."config.json";
+        $this->config = json_decode(file_get_contents($configPath), true);
+    }
     public function login()
     {
         $this->cashe_start();
@@ -14,58 +19,30 @@ class Index extends \Modules\Abs\Controller
         \Modules\Core\Modul\Head::load();
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
-
         $start = new \Modules\User\Modul\Manager\Login();
         $resultJob = $start->start();
-
         if($resultJob["code"] == "code_1"){
-           //тут надо будет добавить ошибку 401
+            $newPage = new \Modules\Core\Controller\E401();
+            $newPage->index();
+            return;
         }
         
         if($resultJob["code"] == "code_0"){
             //логика авторизации еще нет, просто показываем форму
-            $massages = new \Modules\User\Modul\Support\Massager;
-            $this->data_view["messages"] = $massages->getErrors();
+            $this->data_view["messages"] = $resultJob ["message"]->getErrors() ?? '';
             $this->list_file[] = APP_ROOT . "/modules/user/view/login.php";
             $this->show();
             $this->cashe_end();
+            return;
         }
-        
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['auth_button'])) {
-            
-            // Создаем объект Formdata из POST данных
-            $form = new \Modules\User\Modul\Formdata();
-            $form->setFromForma();
-            // Сохраняем введенный логин для отображения в форме
-            $formData = [
-                'login' => $form->getLogin()
-            ];
-            // Создаем экземпляр Login и пробуем авторизоваться
-            $login = new \Modules\User\Modul\Login();
-            $result = $login->authUser($form);
-            
-            if ($result["status"]) {
-                // Успешная авторизация - редирект в личный кабинет
-                header('Location: /user/profile/');
+        if($resultJob["code"] == "code_2"){            
+            if($resultJob["status"]){
+                header('Location: ' . $this->config["page"]["authComplete"]);
                 exit;
-            } else {
-                // Ошибки авторизации
-                $errors = $result["msg"];
-                // Формируем сообщение об ошибках
-                $messages = '<div class="ga_user_error">';
-                foreach ($errors as $error) {
-                    $messages .= '<p>' . htmlspecialchars($error) . '</p>';
-                }
-                $messages .= '</div>';
             }
         }
 
-        // Передаем переменные в представление
-        $this->data_view["messages"] = $messages;
-        $this->data_view["errors"] = $errors;
-        $this->data_view["formData"] = $formData;
-        
+        $this->data_view["messages"] = $resultJob ["message"]->getErrors() ?? '';
         $this->list_file[] = APP_ROOT . "/modules/user/view/login.php";
         $this->show();
         $this->cashe_end();

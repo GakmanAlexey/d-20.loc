@@ -1,21 +1,23 @@
 <?php
 // Login view
 $messages = $this->data_view["messages"] ?? '';
-$formData = $this->data_view["formData"] ?? [];
-$login = $formData['login'] ?? '';
+$login ="";
 ?>
 <div class="ga_user_container">
     <h1 class="ga_user_title">Вход в личный кабинет</h1>
     
-    <?php if ($messages): ?>
-        <?= $messages ?>
-    <?php endif; ?>
-    
+    <?php if ($messages){
+        echo '<div class="ga_user_error">';
+        foreach ($messages as $error) {
+            echo '<p>' . htmlspecialchars($error) . '</p>';
+        }
+        echo '</div>';
+    } ?>
     <form method="post" class="ga_user_form">
         <label class="ga_user_label">Логин или E-mail
             <input 
                 type="text" 
-                name="login" 
+                name="username" 
                 class="ga_user_input" 
                 value="<?= htmlspecialchars($login) ?>"
                 placeholder="Введите логин или email"
@@ -38,7 +40,7 @@ $login = $formData['login'] ?? '';
         </label>
         
         <?php if (isset($_SESSION['csrf_token'])): ?>
-            <input type="hidden" name="token" value="<?= $_SESSION['csrf_token'] ?>">
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
         <?php endif; ?>
         
         <div class="ga_user_actions">

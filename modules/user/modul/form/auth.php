@@ -13,7 +13,7 @@ class Auth
         $this->username = $_POST['username'] ?? '';
         $this->password = $_POST['password'] ?? '';
         $this->remember = isset($_POST['remember']);
-        $this->csrftoken = $_POST['csrftoken'] ?? null;
+        $this->csrftoken = $_POST['csrf_token'] ?? null;
     }
     
 //сетеры

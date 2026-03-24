@@ -18,11 +18,11 @@ class Logs
 
     public function metaDataInit($username){
         $this->metadata = json_encode([
-                'failed_attempt_time' => date('Y-m-d H:i:s'),
-                'login_attempt' => $username,
-                'request_uri' => $_SERVER['REQUEST_URI'] ?? null,
-                'request_method' => $_SERVER['REQUEST_METHOD'] ?? null
-            ]);
+            'failed_attempt_time' => date('Y-m-d H:i:s'),
+            'login_attempt' => $username,
+            'request_uri' => $_SERVER['REQUEST_URI'] ?? null,
+            'request_method' => $_SERVER['REQUEST_METHOD'] ?? null
+        ]);
     }
 
     public function userDataInit(){
@@ -35,52 +35,31 @@ class Logs
 
     public function addToSQL(\Modules\User\Modul\Entity\User $user, string $message){
         //Логирование в базу данных
-        $pdo = \Modules\Core\Modul\Sql::connect();
-        $tableName = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'user_auth_log';
         $userAgentInfo = $this->userAgent;
-        $stmt = $pdo->prepare("
-                INSERT INTO `{$tableName}` (
-                    user_id, 
-                    event, 
-                    success, 
-                    login, 
-                    reason, 
-                    ip_address, 
-                    user_agent, 
-                    device, 
-                    browser, 
-                    os, 
-                    metadata
-                ) VALUES (
-                    NULL, 
-                    'login_failed', 
-                    0, 
-                    :login, 
-                    :reason, 
-                    :ip_address, 
-                    :user_agent, 
-                    :device, 
-                    :browser, 
-                    :os, 
-                    :metadata
-                )
-            ");
-            
-            $stmt->execute([
-                ':login' => $user->getUsername(),
-                ':reason' => $reason,
-                ':ip_address' => $this->userIP,
-                ':user_agent' => $this->userAgent,
-                ':device' => $userAgentInfo['device'],
-                ':browser' => $userAgentInfo['browser'],
-                ':os' => $userAgentInfo['os'],
-                ':metadata' => $metadata
-            ]);
+        $reason = $message;
+        if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] >= 1) {$user_id = $_SESSION["user_id"];} else {$user_id = NULL;}
+        
+        $status = 'login_failed';
+        $success = 0;
+        $logsAuth = new \Modules\User\Modul\Repository\Logsauth;
+        $logsAuth->auth(
+                $user_id,
+                $status,
+                $user->getUsername(),
+                $success,
+                $reason,
+                $this->userIP,
+                json_encode($this->userAgent),
+                $userAgentInfo['device'],
+                $userAgentInfo['browser'],
+                $userAgentInfo['os'],
+                $this->metadata
+            );        
     }
 
     public function addToTXT(\Modules\User\Modul\Entity\User $user, string $message){
          //Логирование в текстовый файл
         $logger = new \Modules\Core\Modul\Logs();
-        $logger->loging('user', $message . " | User: " . $user->getUsername() . " | IP: " . $this->userIP . " | User Agent: " . $this->userAgent);
+        $logger->loging('user', $message . " | User: " . $user->getUsername() . " | IP: " . $this->userIP . " | User Agent: " . json_encode($this->userAgent));
     }
 }

@@ -10,17 +10,16 @@ class Auth
     {
         $language = \Modules\Core\Modul\Env::get('APP_LANGUAGE') ?: 'ru_RU';
         $langPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS .  "support" . DS . "lang" . DS . $language . ".json";
-        $this->lang = json_decode(file_get_contents($langPath), true)['messages'] ?? [];
+        $this->lang = json_decode(file_get_contents($langPath), true) ?? [];
     }
 
-    public function getAuth(\Modules\User\Modul\Entity\User $user, \Modules\User\Modul\Support\Massager $massages){
+    public function getAuth(\Modules\User\Modul\Entity\User $user, \Modules\User\Modul\Support\Messenger $massages){
         //Добавить в лог процесс атовризации
         $logs = new \Modules\User\Modul\Support\Logs;
         $logs->addLog($user, "Попытка авторизации");
         //сам процесс автоизации
         $authRepository = new \Modules\User\Modul\Repository\Auth;
         $resultAuth = $authRepository->getAuth($user);
-
         if (!$resultAuth) {
             $logs->addLog($user, "Пользователь не найден");
             $massages->addError($this->lang["login"]['user_not_found']);

@@ -13,13 +13,14 @@ class Validator
 
         $language = \Modules\Core\Modul\Env::get('APP_LANGUAGE') ?: 'ru_RU';
         $langPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS .  "support" . DS . "lang" . DS . $language . ".json";
-        $this->lang = json_decode(file_get_contents($langPath), true)['messages'] ?? [];
+        $this->lang = json_decode(file_get_contents($langPath), true) ?? [];
     }
 
     /* ==================== PUBLIC ==================== */
 
-    public function validateAuth(\Modules\User\Modul\Support\Massager $massager, \Modules\User\Modul\Form\Auth $formAuth): bool
+    public function validateAuth(\Modules\User\Modul\Support\Messenger $massager, \Modules\User\Modul\Form\Auth $formAuth)
     {
+        
         if(!$this->validateUsername($massager, $formAuth->getUsername())) {
                 return ["status" => false, "message" => $massager];
         }
@@ -33,7 +34,7 @@ class Validator
 
 
 
-    public function validateUsername(\Modules\User\Modul\Support\Massager $massager, $userName){
+    public function validateUsername(\Modules\User\Modul\Support\Messenger $massager, $userName){
         $userName = trim($userName);
         $min = $this->config['limits']['min_username'] ?? 3;
         $max = $this->config['limits']['max_username'] ?? 20;
@@ -53,7 +54,8 @@ class Validator
         return true;
     }
 
-    public function validatePassword(\Modules\User\Modul\Support\Massager $massager, $password){
+    public function validatePassword(\Modules\User\Modul\Support\Messenger $massager, $password){
+        
         $password = trim($password);
         $min = $this->config['limits']['min_pass'] ?? 6;
         $max = $this->config['limits']['max_pass'] ?? 255;
