@@ -22,7 +22,9 @@ class login
          $form = new \Modules\User\Modul\Form\Auth;
          $result = $this->staticAuth($form);
          if ($result["status"]) {
-             return ["code" => "code_2", "status" => true, "message" => $result["message"] ?? ''];
+            $rememberManager = new \Modules\User\Modul\Manager\Remember;
+            $rememberManager->isPressFlag($form);
+            return ["code" => "code_2", "status" => true, "message" => $result["message"] ?? ''];
          }      
          return ["code" => "code_2", "status" => false, "message" => $result["message"]];
       }

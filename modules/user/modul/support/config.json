@@ -23,5 +23,9 @@
             "password2":""
         }
 
+    },
+    "remember":{
+        "nameCoockie":"TabaksiBabaxi",
+        "dayAvible":"30"
     }
 }
