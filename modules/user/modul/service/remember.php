@@ -42,6 +42,7 @@ class Remember
         $serData = $authRep->getUserById($dataBD['user_id']);
         if(!$serData) return null;
         \Modules\User\User::setUser($serData["id"], $serData["username"], true);
+        \Modules\User\Modul\Support\Sessionauth::setSession($serData["id"]);
         
         $this->updateToken($hashToken); 
         return;

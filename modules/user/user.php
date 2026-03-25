@@ -61,15 +61,12 @@ class User
         self::$flag = false;
     }
 
-    public static function sessionAuth(){    
-        if(\Modules\User\Modul\Support\Sessionauth::isAuthorized()){
+    public static function sessionAuth(){  
+        if(\Modules\User\Modul\Support\Sessionauth::isAuthorized()){            
            $auth = new \Modules\User\Modul\Manager\Auth();
            $user = $auth->getUserById(\Modules\User\Modul\Support\Sessionauth::getSession());
-            
            if($user){
                self::setUser($user->getID(), $user->getUsername(), true);
-           } else {
-               //self::clearUser();
            }
         }
     }

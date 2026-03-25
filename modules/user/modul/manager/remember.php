@@ -19,6 +19,9 @@ class Remember
     
         $service = new \Modules\User\Modul\Service\Remember;
         $service->authFromCoockie($remSup);
+        
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
     }
     
 }
