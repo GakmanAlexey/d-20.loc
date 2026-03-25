@@ -42,29 +42,16 @@ class Login extends \Modules\Abs\Controller
 
     public function logout()
     {
-        // Запускаем сессию
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-        
-        // Очищаем сессию
-        $_SESSION = array();
-        
-        // Уничтожаем куки сессии
-        if (ini_get("session.use_cookies")) {
-            $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000,
-                $params["path"], $params["domain"],
-                $params["secure"], $params["httponly"]
-            );
-        }
-        
-        // Уничтожаем сессию
-        session_destroy();
-        
-        // Редирект на главную или страницу входа
-        header('Location: /user/login/');
-        exit;
+        $this->cashe_start();
+        if ($this->cache_isset) return;
+
+        \Modules\Core\Modul\Head::load();
+        $this->type_show = "default";
+        \Modules\Core\Modul\Resource::load_conf($this->type_show);
+
+        $this->list_file[] = APP_ROOT . "/modules/user/view/logout.php";
+        $this->show();
+        $this->cashe_end();
     }
 
 }

@@ -1,6 +1,6 @@
 [
-    ["/user/login/", "Modules\\User\\Controller\\Login", "login"],
-    ["/user/logout/", "Modules\\User\\Controller\\Index", "logout"],
+    ["/user/login/", "Modules\\User\\Controller\\Login", "Login"],
+    ["/user/logout/", "Modules\\User\\Controller\\Login", "logout"],
     ["/user/login/success/", "Modules\\User\\Controller\\Index", "login_success"],
     ["/user/register/", "Modules\\User\\Controller\\Index", "register"],
     ["/user/register/success/", "Modules\\User\\Controller\\Index", "register_success"],

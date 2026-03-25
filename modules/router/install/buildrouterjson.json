@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-03-23 16:08:22",
+    "generated_at": "2026-03-25 17:48:39",
     "routes_count": 37,
     "routes": [
         {
@@ -71,12 +71,12 @@
         {
             "path": "/user/login/",
             "class": "Modules\\User\\Controller\\Login",
-            "method": "login",
+            "method": "Login",
             "module": "user"
         },
         {
             "path": "/user/logout/",
-            "class": "Modules\\User\\Controller\\Index",
+            "class": "Modules\\User\\Controller\\Login",
             "method": "logout",
             "module": "user"
         },
