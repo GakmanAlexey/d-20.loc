@@ -12,12 +12,13 @@ $login ="";
             echo '<p>' . htmlspecialchars($error) . '</p>';
         }
         echo '</div>';
-    } ?>
+    } 
+    ?>
     <form method="post" class="ga_user_form">
         <label class="ga_user_label">Логин или E-mail
             <input 
                 type="text" 
-                name="username" 
+                name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.username");?>" 
                 class="ga_user_input" 
                 value="<?= htmlspecialchars($login) ?>"
                 placeholder="Введите логин или email"
@@ -28,23 +29,23 @@ $login ="";
         <label class="ga_user_label">Пароль
             <input 
                 type="password" 
-                name="password" 
+                name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.password");?>" 
                 class="ga_user_input" 
                 placeholder="Введите пароль"
                 required
             >
         </label>
         <label class="ga_user_checkbox">
-            <input type="checkbox" name="remember" value="1">
+            <input type="checkbox" name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.remember");?>" value="1">
             Запомнить меня
         </label>
         
         <?php if (isset($_SESSION['csrf_token'])): ?>
-            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+            <input type="hidden" name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.csft");?>" value="<?= $_SESSION['csrf_token'] ?>">
         <?php endif; ?>
         
         <div class="ga_user_actions">
-            <button type="submit" name="auth_button" class="ga_user_button">Войти</button>
+            <button type="submit" name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.button");?>" class="ga_user_button">Войти</button>
             <a class="ga_user_link" href="/user/register/">Регистрация</a>
         </div>
         

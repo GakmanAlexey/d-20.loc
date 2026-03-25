@@ -10,10 +10,10 @@ class Auth
     private ?string $csrftoken;
     public function __construct()
     {
-        $this->username = $_POST['username'] ?? '';
-        $this->password = $_POST['password'] ?? '';
-        $this->remember = isset($_POST['remember']);
-        $this->csrftoken = $_POST['csrf_token'] ?? null;
+        $this->username = $_POST[\Modules\User\Modul\Support\Config::get("form.auth.username")] ?? '';
+        $this->password = $_POST[\Modules\User\Modul\Support\Config::get("form.auth.password")] ?? '';
+        $this->remember = isset($_POST[\Modules\User\Modul\Support\Config::get("form.auth.remember")]);
+        $this->csrftoken = $_POST[\Modules\User\Modul\Support\Config::get("form.auth.csft")] ?? null;
     }
     
 //сетеры

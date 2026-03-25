@@ -6,7 +6,7 @@ class Config
     private static $statusLoad = false;
     public static $config;
 
-    public function __construct()
+    public static function load()
     {
         $configPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS .  "support" . DS ."config.json";
         self::$config = json_decode(file_get_contents($configPath), true);
@@ -14,6 +14,9 @@ class Config
     }
 
     public static function takeFull(){
+        if(!self::$statusLoad){
+            self::load();
+        }
         return self::$config;
     }
 
@@ -22,6 +25,7 @@ class Config
     * Пример: get('limits.min_pass')
     * 
     */
+
     public static function get($key, $default = null)
     {
         $config = self::takeFull();

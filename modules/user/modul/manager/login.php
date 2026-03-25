@@ -18,7 +18,7 @@ class login
       }
       
       $massages = new \Modules\User\Modul\Support\Messenger;
-      if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['auth_button'])){
+      if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST[\Modules\User\Modul\Support\Config::get("form.auth.button")])){
          $form = new \Modules\User\Modul\Form\Auth;
          $result = $this->staticAuth($form);
          if ($result["status"]) {

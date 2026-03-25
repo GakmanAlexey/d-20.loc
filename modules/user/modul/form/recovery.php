@@ -8,8 +8,8 @@ class Recovery
     private ?string $csrftoken;
     public function __construct()
     {
-        $this->username = $_POST['username'] ?? '';
-        $this->csrftoken = $_POST['csrftoken'] ?? null;
+        $this->username = $_POST[\Modules\User\Modul\Support\Config::get("form.auth.username")] ?? '';
+        $this->csrftoken = $_POST[\Modules\User\Modul\Support\Config::get("form.auth.csft")] ?? null;
     }
     
 //сетеры

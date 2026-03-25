@@ -11,10 +11,11 @@
     },
     "form":{
         "auth":{
-            "username":"",
-            "password":"",
-            "remember":"",
-            "button":"goAuth"
+            "username":"username",
+            "password":"password",
+            "remember":"remember",
+            "button":"goAuth",
+            "csft":"csft_token"
         },
         "register":{
             "username":"",

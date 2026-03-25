@@ -4,14 +4,7 @@ namespace Modules\User\Controller;
 
 class Login extends \Modules\Abs\Controller
 {
-    public $config;
-
-    public function __construct()
-    {
-        $configPath = APP_ROOT . DS . "modules" . DS . "user" . DS . "modul" . DS .  "support" . DS ."config.json";
-        $this->config = json_decode(file_get_contents($configPath), true);
-    }
-    public function login()
+      public function login()
     {
         $this->cashe_start();
         if ($this->cache_isset) return;
@@ -22,7 +15,7 @@ class Login extends \Modules\Abs\Controller
         $start = new \Modules\User\Modul\Manager\Login();
         $resultJob = $start->start();
         if($resultJob["code"] == "code_1"){
-                header('Location: ' . $this->config["page"]["personalCabinet"]);
+                header('Location: ' . \Modules\User\Modul\Support\Config::get("page.personalCabinet"));
                 exit;
         }
         
@@ -36,7 +29,7 @@ class Login extends \Modules\Abs\Controller
         }
         if($resultJob["code"] == "code_2"){            
             if($resultJob["status"]){
-                header('Location: ' . $this->config["page"]["authComplete"]);
+                header('Location: ' . \Modules\User\Modul\Support\Config::get("page.authComplete"));
                 exit;
             }
         }
