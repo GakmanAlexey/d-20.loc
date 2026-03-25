@@ -1,7 +1,7 @@
 <?php
 // Login view
 $messages = $this->data_view["messages"] ?? '';
-$login ="";
+$login = $_POST[\Modules\User\Modul\Support\Config::get("form.auth.username")] ?? "";
 ?>
 <div class="ga_user_container">
     <h1 class="ga_user_title">Вход в личный кабинет</h1>
