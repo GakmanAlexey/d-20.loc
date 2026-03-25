@@ -15,7 +15,7 @@ foreach(\Modules\Core\Modul\Menu::get_element("nav") as $element){
                     <a class="b002_nav_item" href="/catalog/">Каталог</a>
                     <a class="b002_nav_item" href="">Доставка и оплата</a>
                     <a class="b002_nav_item" href="">О нас</a>
-                    <a class="b002_nav_item" href="">Контакты</a>
+                    <a class="b002_nav_item" href=""><?php var_dump(\Modules\User\User::getUserID()); ?></a>
                     <form>
                     <div class="search_box hd_mob">
                       <input

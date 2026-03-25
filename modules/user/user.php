@@ -20,7 +20,6 @@ class User
     }
 
     public static function setUser($userID, $username, $status){
-        
         self::$userID = $userID; 
         self::$username = $username;
         self::$status = $status;

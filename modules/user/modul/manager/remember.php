@@ -10,8 +10,15 @@ class Remember
         $service->createCoockie($form);
         
     }
-    Public function auto(){
-
+    // $authToken = new \Modules\User\Modul\Manager\Remember;
+    // $authToken->autoAuth();
+    public function autoAuth(){
+        if(\Modules\User\User::getUserID() >= 1) return NULL;
+        $remSup = new \Modules\User\Modul\Support\Remembertoken;
+        if (!isset($_COOKIE[$remSup->nameCookie])) return null;
+    
+        $service = new \Modules\User\Modul\Service\Remember;
+        $service->authFromCoockie($remSup);
     }
     
 }
