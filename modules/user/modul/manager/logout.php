@@ -8,7 +8,10 @@ class Logout
       if(!\Modules\User\User::isAuth()){
          return false;
       }
-      $form = new \Modules\User\Modul\Form\Logout;
+      $form = new \Modules\User\Modul\Form\Logout;      
+      if (!\Modules\User\Modul\Support\Csrf::validate($form->getCsrftoken())) {
+            return true;
+      }      
       if($form->getSolo()){$this->singlOut($form);}
       if($form->getMulti()){$this->multiOut($form);}
 

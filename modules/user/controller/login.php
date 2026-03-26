@@ -50,10 +50,7 @@ class Login extends \Modules\Abs\Controller
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
 
         $logout = new \Modules\User\Modul\Manager\Logout;
-        if(!$logout->Out()){
-            header('Location: ' . \Modules\User\Modul\Support\Config::get("page.outCompleate"));
-            exit;
-        }
+        $logout->Out();
 
         $this->list_file[] = APP_ROOT . "/modules/user/view/logout.php";
         $this->show();

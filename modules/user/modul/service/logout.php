@@ -8,13 +8,22 @@ class Logout
     {
         $entityLogout = new \Modules\User\Modul\Entity\Logout;
         $rememberToken = new \Modules\User\Modul\Support\Remembertoken;
-        $hashToken = $rememberToken->hashToken($_COOKIE[\Modules\User\Modul\Support\Config::get("remember.nameCoockie")]);
+        if (isset($_COOKIE[\Modules\User\Modul\Support\Config::get("remember.nameCoockie")])) {
+            $hashToken = $rememberToken->hashToken($_COOKIE[\Modules\User\Modul\Support\Config::get("remember.nameCoockie")]);
+        }else{
+            $hashToken = null;
+        }
 
         $logOutRepository = new \Modules\User\Modul\Repository\Logout;
-        $entityLogout->setCookie(\Modules\User\Modul\Support\Config::get("remember.nameCoockie"))
-            ->setSessionToken($_COOKIE[\Modules\User\Modul\Support\Config::get("remember.nameCoockie")])            
+        if (isset($_COOKIE[\Modules\User\Modul\Support\Config::get("remember.nameCoockie")])) {
+            $entityLogout ->setSessionToken($_COOKIE[\Modules\User\Modul\Support\Config::get("remember.nameCoockie")]) ;
+        }else{
+            $hashToken = null;
+        }
+        $entityLogout->setCookie(\Modules\User\Modul\Support\Config::get("remember.nameCoockie"))          
             ->setUserID(\Modules\User\User::getUserID())
-            ->setSessionIdInBaseData(($logOutRepository->takeSoloSession($hashToken))["id"]);
+            ->setSessionIdInBaseData(($logOutRepository->takeSoloSession($hashToken))["id"]??null);
+            
 
         return $entityLogout;
     }
