@@ -70,4 +70,9 @@ class User
            }
         }
     }
+
+    public static function isAuth(){
+        if(self::$flag){return true;}  
+        return false;
+    }
 }
