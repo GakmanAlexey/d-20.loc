@@ -29,5 +29,16 @@ class Logout
         $stmt->bindValue(':id', $sessionId, \PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    public function killSoloSessionFull($userID){
+        $pdo = \Modules\Core\Modul\Sql::connect();        
+        $tableName = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'user_sessions';
+
+        $stmt = $pdo->prepare("
+            DELETE FROM `{$tableName}` WHERE user_id   = :user_id  ");
+        
+        $stmt->bindValue(':user_id', $userID, \PDO::PARAM_INT);
+        $stmt->execute();
+    }
    
 }

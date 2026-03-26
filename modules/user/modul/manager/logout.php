@@ -32,7 +32,15 @@ class Logout
 
    public function multiOut(\Modules\User\Modul\Form\Logout $form)
    {      
-      //Удалить все сессии и БД logout/
+      $serviceLogout = new \Modules\User\Modul\Service\Logout;
+      $entityLogout = $serviceLogout->createEntityLogout($form);
+      
+      $serviceLogout->killSoloSession($entityLogout);
+      $serviceLogout->killCookie($entityLogout);
+      $serviceLogout->killBaseDataFull($entityLogout);
+
+      header('Location: ' . \Modules\User\Modul\Support\Config::get("page.outCompleate"));
+      exit;
    }
 
    

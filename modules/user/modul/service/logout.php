@@ -22,8 +22,7 @@ class Logout
         }
         $entityLogout->setCookie(\Modules\User\Modul\Support\Config::get("remember.nameCoockie"))          
             ->setUserID(\Modules\User\User::getUserID())
-            ->setSessionIdInBaseData(($logOutRepository->takeSoloSession($hashToken))["id"]??null);
-            
+            ->setSessionIdInBaseData(($logOutRepository->takeSoloSession($hashToken))["id"]??null);            
 
         return $entityLogout;
     }
@@ -57,5 +56,10 @@ class Logout
         
         $logOutRepository = new \Modules\User\Modul\Repository\Logout;
         $logOutRepository->killSoloSession($entityLogout->getSessionIdInBaseData());
+    }
+    public function killBaseDataFull(\Modules\User\Modul\Entity\Logout $entityLogout)
+    {
+        $logOutRepository = new \Modules\User\Modul\Repository\Logout;
+        $logOutRepository->killSoloSessionFull($entityLogout->getUserID());
     }
 }
