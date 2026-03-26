@@ -1,6 +1,6 @@
 {
-    "generated_at": "2026-03-25 17:48:39",
-    "routes_count": 37,
+    "generated_at": "2026-03-26 19:01:58",
+    "routes_count": 36,
     "routes": [
         {
             "path": "/admin/",
@@ -81,14 +81,8 @@
             "module": "user"
         },
         {
-            "path": "/user/login/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "login_success",
-            "module": "user"
-        },
-        {
             "path": "/user/register/",
-            "class": "Modules\\User\\Controller\\Index",
+            "class": "Modules\\User\\Controller\\Register",
             "method": "register",
             "module": "user"
         },

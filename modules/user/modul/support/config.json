@@ -25,9 +25,12 @@
             "csft":"csft_token"
         },
         "register":{
-            "username":"",
-            "password":"",
-            "password2":""
+            "username":"username",
+            "password":"password",
+            "password_confirm":"password_confirm",
+            "email":"email",
+            "csft":"csft_token",
+            "button":"reg_button"
         }
 
     },

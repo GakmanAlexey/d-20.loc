@@ -17,7 +17,7 @@
         <label class="ga_user_label">Логин
             <input 
                 type="text" 
-                name="login" 
+                name="<?php echo \Modules\User\Modul\Support\Config::get("form.register.username");?>" 
                 class="ga_user_input" 
                 value="<?php echo isset($this->data_view['formData']['login']) ? htmlspecialchars($this->data_view['formData']['login']) : ''; ?>"
                 required
@@ -26,7 +26,7 @@
         <label class="ga_user_label">E-mail
             <input 
                 type="email" 
-                name="email" 
+                name="<?php echo \Modules\User\Modul\Support\Config::get("form.register.email");?>" 
                 class="ga_user_input" 
                 value="<?php echo isset($this->data_view["formData"]['email']) ? htmlspecialchars($this->data_view["formData"]['email']) : ''; ?>"
                 required
@@ -34,15 +34,19 @@
         </label>
         
         <label class="ga_user_label">Пароль
-            <input type="password" name="password" class="ga_user_input" required>
+            <input type="password" name="<?php echo \Modules\User\Modul\Support\Config::get("form.register.password");?>" class="ga_user_input" required>
         </label>
         
         <label class="ga_user_label">Повтор пароля
-            <input type="password" name="password_confirm" class="ga_user_input" required>
+            <input type="password" name="<?php echo \Modules\User\Modul\Support\Config::get("form.register.password_confirm");?>" class="ga_user_input" required>
         </label>
         
+        <?php if (isset($_SESSION['csrf_token'])): ?>
+            <input type="hidden" name="<?php echo \Modules\User\Modul\Support\Config::get("form.register.csft");?>" value="<?= $_SESSION['csrf_token'] ?>">
+        <?php endif; ?>
+
         <div class="ga_user_actions">
-            <button type="submit" name="reg_button" class="ga_user_button">Зарегистрироваться</button>
+            <button type="submit" name="<?php echo \Modules\User\Modul\Support\Config::get("form.register.button");?>" class="ga_user_button">Зарегистрироваться</button>
             <a class="ga_user_link" href="/user/login/">Войти</a>
         </div>
     </form>

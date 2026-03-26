@@ -1,8 +1,7 @@
 [
     ["/user/login/", "Modules\\User\\Controller\\Login", "Login"],
     ["/user/logout/", "Modules\\User\\Controller\\Login", "logout"],
-    ["/user/login/success/", "Modules\\User\\Controller\\Index", "login_success"],
-    ["/user/register/", "Modules\\User\\Controller\\Index", "register"],
+    ["/user/register/", "Modules\\User\\Controller\\Register", "register"],
     ["/user/register/success/", "Modules\\User\\Controller\\Index", "register_success"],
     ["/user/profile/", "Modules\\User\\Controller\\Index", "profile"],
     ["/user/change-password/", "Modules\\User\\Controller\\Index", "change_password"],

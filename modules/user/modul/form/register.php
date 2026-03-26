@@ -11,11 +11,11 @@ class Register
     private ?string $csrftoken;
     public function __construct()
     {
-        $this->username = $_POST['username'] ?? '';
-        $this->password = $_POST['password'] ?? '';
-        $this->password_confirm = $_POST['password_confirm'] ?? '';
-        $this->email = $_POST['email'] ?? '';
-        $this->csrftoken = $_POST['csrftoken'] ?? null;
+        $this->username = $_POST[\Modules\User\Modul\Support\Config::get("form.register.username")] ?? '';
+        $this->password = $_POST[\Modules\User\Modul\Support\Config::get("form.register.password")] ?? '';
+        $this->password_confirm = $_POST[\Modules\User\Modul\Support\Config::get("form.register.password_confirm")] ?? '';
+        $this->email = $_POST[\Modules\User\Modul\Support\Config::get("form.register.email")] ?? '';
+        $this->csrftoken = $_POST[\Modules\User\Modul\Support\Config::get("form.register.csrftoken")] ?? null;
     }
     
 //сетеры

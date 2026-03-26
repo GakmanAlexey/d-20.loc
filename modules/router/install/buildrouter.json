@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-03-25 17:48:39",
+    "generated_at": "2026-03-26 19:01:58",
     "sources": {
         "json_routes": 0,
         "sql_routes": 0
@@ -85,14 +85,8 @@
             "module": "user"
         },
         {
-            "path": "/user/login/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "login_success",
-            "module": "user"
-        },
-        {
             "path": "/user/register/",
-            "class": "Modules\\User\\Controller\\Index",
+            "class": "Modules\\User\\Controller\\Register",
             "method": "register",
             "module": "user"
         },
@@ -149,6 +143,12 @@
             "class": "Modules\\User\\Controller\\Index",
             "method": "password_recovery_success",
             "module": "user"
+        },
+        {
+            "path": "/user/login/success/",
+            "class": "Modules\\User\\Controller\\Index",
+            "method": "login_success",
+            "module": "user copy"
         }
     ]
 }
