@@ -18,8 +18,9 @@
             "button":"goAuth",
             "csft":"csft_token"
         },
-        "logAut":{
-            "button":"gologOut",
+        "logout":{
+            "solo":"soloButton",
+            "multi":"multiButton",
             "csft":"csft_token"
         },
         "register":{

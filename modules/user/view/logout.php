@@ -6,12 +6,14 @@
         
         
         <?php if (isset($_SESSION['csrf_token'])): ?>
-            <input type="hidden" name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.csft");?>" value="<?= $_SESSION['csrf_token'] ?>">
+            <input type="hidden" name="<?php echo \Modules\User\Modul\Support\Config::get("form.logout.csft");?>" value="<?= $_SESSION['csrf_token'] ?>">
         <?php endif; ?>
         
         <div class="ga_user_actions">
-            <button type="submit" name="<?php echo \Modules\User\Modul\Support\Config::get("form.auth.button");?>" class="ga_user_button">Выйти</button>
-            
+            <button type="submit" name="<?php echo \Modules\User\Modul\Support\Config::get("form.logout.solo");?>" class="ga_user_button" value="1">Выйти</button>    
+        </div>
+        <div class="ga_user_actions">
+            <button type="submit" name="<?php echo \Modules\User\Modul\Support\Config::get("form.logout.multi");?>" class="ga_user_button" value="1">Выйти со всех</button>    
         </div>
         
     </form>
