@@ -28,6 +28,10 @@ class Register
         $stmt->bindValue(':email', $user->getEmail(), \PDO::PARAM_STR);
         $stmt->bindValue(':is_active', 0, \PDO::PARAM_INT);
 
-        return $stmt->execute();
+        if ($stmt->execute()) {
+            return $pdo->lastInsertId();
+        }
+
+        return false;
     }
 }

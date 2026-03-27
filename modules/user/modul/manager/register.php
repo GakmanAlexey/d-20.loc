@@ -21,6 +21,7 @@ class Register
             $result = $this->staticRegister($form);
             return $result;
         }
+        return ["code" => "code_0", "message" => $massages];
     }
 
     public function staticRegister($form){
@@ -49,11 +50,16 @@ class Register
             $user->setUsername($form->getUsername())
                 ->setPassword($form->getPassword())
                 ->setEmail($form->getEmail());
-         //Здесь будет регистрация пользователя
+        //Здесь будет регистрация пользователя
         $statusRegister = $serviceRegister->register($user, $massages);
-         
-
-         return ["status" => false, "code" => "code_2", "message" => $massages];
+        if(!$statusRegister["status"]){
+            return ["status" => false, "code" => "code_2", "message" => $massages];
+        }
+        $user->setId($statusRegister["id"]);
+        //Здесь будет создание токена подтверждения и отправка письма
+        $mailer = new \Modules\User\Modul\Support\Mailer;
+        $statusMail = $mailer->createConfirmToken($user);   
+        return ["status" => true, "code" => "code_3", "message" => $massages];
    }
 
    

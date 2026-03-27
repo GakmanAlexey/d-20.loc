@@ -17,8 +17,9 @@ class Register
         //создать хеш пароля
         $user->setPasswordHash(\Modules\User\Modul\Support\Hash::make($user->getPassword()));
         $repository = new \Modules\User\Modul\Repository\Register;
-        if ($repository->register($user)) {
-            return ["status" => true];
+        $resultinsert = $repository->register($user);
+        if ($resultinsert) {
+            return ["status" => true, "id" => $resultinsert];
         }
         $massages->addError($this->lang["register"]['registration_error']);
         return ["status" => false, "message" => $massages]; 

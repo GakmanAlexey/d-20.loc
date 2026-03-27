@@ -15,10 +15,27 @@ class Register extends \Modules\Abs\Controller
 
         $start = new \Modules\User\Modul\Manager\Register();
         $resultJob = $start->start();
+        if($resultJob["code"] == "code_1"){
+                header('Location: ' . \Modules\User\Modul\Support\Config::get("page.personalCabinet"));
+                exit;
+        }elseif($resultJob["code"] == "code_2"){
             $this->data_view["messages"] = $resultJob ["message"]->getErrors() ?? '';
-        $this->list_file[] = APP_ROOT . "/modules/user/view/register.php";
-        $this->show();
-        $this->cashe_end();
+            $this->list_file[] = APP_ROOT . "/modules/user/view/register.php";
+            $this->show();
+            $this->cashe_end();
+        }elseif($resultJob["code"] == "code_3"){
+            //регистрация прошла успешно            
+            $this->data_view["messages"] = $resultJob ["message"]->getErrors() ?? '';
+            $this->list_file[] = APP_ROOT . "/modules/user/view/register_success.php";
+            $this->show();
+            $this->cashe_end();
+        }else{
+            $this->data_view["messages"] = $resultJob ["message"]->getErrors() ?? '';
+            $this->list_file[] = APP_ROOT . "/modules/user/view/register.php";
+            $this->show();
+            $this->cashe_end();
+        }
+
     }
 
     public function back()
