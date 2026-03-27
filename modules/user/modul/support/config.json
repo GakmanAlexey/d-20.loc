@@ -31,6 +31,13 @@
             "email":"email",
             "csft":"csft_token",
             "button":"reg_button"
+        },
+        "change":{
+            "password":"password",
+            "new_password":"password",
+            "new_password_confirm":"password_confirm",
+            "csft":"csft_token",
+            "button":"change_button"
         }
 
     },

@@ -4,7 +4,7 @@
     ["/user/register/", "Modules\\User\\Controller\\Register", "register"],
     ["/user/register/success/", "Modules\\User\\Controller\\Register", "emailConfirm"],
     ["/user/profile/", "Modules\\User\\Controller\\Index", "profile"],
-    ["/user/change-password/", "Modules\\User\\Controller\\Index", "change_password"],
+    ["/user/change-password/", "Modules\\User\\Controller\\Services", "passwordChange"],
     ["/user/verify/", "Modules\\User\\Controller\\Index", "verify_id"],
     ["/user/verify/success/", "Modules\\User\\Controller\\Index", "verify_success"],
     ["/user/verify/failure/", "Modules\\User\\Controller\\Index", "verify_failure"],
