@@ -21,7 +21,9 @@
         "email_invalid": "Неверный формат email",
         "email_too_long": "Email слишком длинный",
         "username_exists": "Имя пользователя занято",
-        "registration_error": "Ошибка при регистрации, попробуйте снова"
+        "registration_error": "Ошибка при регистрации, попробуйте снова",
+        "error_token_confirm_email": "Неверный токен подтверждения email",
+        "token_dont_isset": "Токен устарел"
     },
     "recoverypassword": {
         "server_error": "Ошибка сервера, попробуйте позже"

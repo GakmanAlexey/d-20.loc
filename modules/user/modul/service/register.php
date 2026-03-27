@@ -34,5 +34,21 @@ class Register
         return ["status" => true, "message" => $massages];
     }
 
+    public function confirmEmail($token, \Modules\User\Modul\Support\Messenger $massages){
+        $repository = new \Modules\User\Modul\Repository\Register;
+        $tokens = $repository->validateConfirmToken($token);
+        $mailer = new \Modules\User\Modul\Support\Mailer;
+            foreach ($tokens as $row) {
+                if ($mailer->verifyToken($token, $row['token_hash'])) {
+                    $repository->activeUser($row["id_user"]);
+                    $repository->markTokenAsUsed($row['id']);
+                    return ["status" => true, "message" => $massages];
+                }
+            }  
+        $massages->addError($this->lang["register"]['token_dont_isset']);
+        return ["status" => false, "message" => $massages];
+    }
+
+
    
 }

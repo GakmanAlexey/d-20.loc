@@ -2,7 +2,7 @@
     ["/user/login/", "Modules\\User\\Controller\\Login", "Login"],
     ["/user/logout/", "Modules\\User\\Controller\\Login", "logout"],
     ["/user/register/", "Modules\\User\\Controller\\Register", "register"],
-    ["/user/register/success/", "Modules\\User\\Controller\\Index", "register_success"],
+    ["/user/register/success/", "Modules\\User\\Controller\\Register", "emailConfirm"],
     ["/user/profile/", "Modules\\User\\Controller\\Index", "profile"],
     ["/user/change-password/", "Modules\\User\\Controller\\Index", "change_password"],
     ["/user/verify/", "Modules\\User\\Controller\\Index", "verify_id"],

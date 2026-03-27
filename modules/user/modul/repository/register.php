@@ -34,4 +34,56 @@ class Register
 
         return false;
     }
+
+    public function validateConfirmToken($token){
+        $pdo = \Modules\Core\Modul\Sql::connect();
+        $table = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'users_mail_status';
+            
+            // Ищем неиспользованные токены с типом confirm_email
+        $stmt = $pdo->prepare("
+                SELECT * FROM {$table} 
+                WHERE type = 'confirm_email' 
+                AND used_at IS NULL 
+                AND expires_at > NOW()
+                ORDER BY created_at DESC 
+                LIMIT 1000
+        ");
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    
+    public function activeUser($id_user){
+        
+        $repository = new \Modules\User\Modul\Repository\Register;
+        $pdo = \Modules\Core\Modul\Sql::connect();
+        $table = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'users';
+
+        $stmt = $pdo->prepare("
+            UPDATE {$table}
+            SET is_active = 1
+            WHERE id = :id
+        ");
+
+        return $stmt->execute([
+            ':id' => $id_user
+        ]);
+    }
+
+    public function markTokenAsUsed($id_row){
+        try {
+            $pdo = \Modules\Core\Modul\Sql::connect();
+            $table = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'users_mail_status';
+            
+            $stmt = $pdo->prepare("
+                UPDATE {$table} 
+                SET used_at = NOW() 
+                WHERE id = :id
+            ");
+            
+            return $stmt->execute(['id' => $id_row]);
+            
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
 }

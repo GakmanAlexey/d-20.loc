@@ -62,5 +62,15 @@ class Register
         return ["status" => true, "code" => "code_3", "message" => $massages];
    }
 
+    public function confirmEmail(){
+        $massages = new \Modules\User\Modul\Support\Messenger;
+        if (!isset($_GET['token'])) {
+            $massages->addError($this->lang["register"]['error_token_confirm_email']);
+            return ["status" => false, "message" => $massages];
+        }
+        $serviceRegister = new \Modules\User\Modul\Service\Register;
+        return $serviceRegister->confirmEmail($_GET['token'], $massages);
+    }
+
    
 }

@@ -38,7 +38,7 @@ class Register extends \Modules\Abs\Controller
 
     }
 
-    public function back()
+    public function emailConfirm()
     {
         $this->cashe_start();
         if ($this->cache_isset) return;
@@ -47,7 +47,13 @@ class Register extends \Modules\Abs\Controller
         $this->type_show = "default";
         \Modules\Core\Modul\Resource::load_conf($this->type_show);
 
-        $this->list_file[] = APP_ROOT . "/modules/user/view/logout.php";
+        $start = new \Modules\User\Modul\Manager\Register();
+        $resultJob = $start->confirmEmail();
+        if($resultJob["status"]){
+            $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend.php";
+        }else{
+            $this->list_file[] = APP_ROOT . "/modules/user/view/register_success_mailsend_error.php";
+        }
         $this->show();
         $this->cashe_end();
     }

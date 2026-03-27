@@ -1,5 +1,5 @@
 {
-    "generated_at": "2026-03-27 15:13:38",
+    "generated_at": "2026-03-27 23:24:25",
     "sources": {
         "json_routes": 0,
         "sql_routes": 0
@@ -92,8 +92,8 @@
         },
         {
             "path": "/user/register/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "register_success",
+            "class": "Modules\\User\\Controller\\Register",
+            "method": "emailConfirm",
             "module": "user"
         },
         {
