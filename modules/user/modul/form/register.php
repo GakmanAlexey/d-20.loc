@@ -15,31 +15,31 @@ class Register
         $this->password = $_POST[\Modules\User\Modul\Support\Config::get("form.register.password")] ?? '';
         $this->password_confirm = $_POST[\Modules\User\Modul\Support\Config::get("form.register.password_confirm")] ?? '';
         $this->email = $_POST[\Modules\User\Modul\Support\Config::get("form.register.email")] ?? '';
-        $this->csrftoken = $_POST[\Modules\User\Modul\Support\Config::get("form.register.csrftoken")] ?? null;
+        $this->csrftoken = $_POST[\Modules\User\Modul\Support\Config::get("form.register.csft")] ?? null;
     }
     
 //сетеры
-    public function setUsername(string $username): void
+    public function setUsername(string $username): self
     {
         $this->username = $username;
         return $this;
     }
-    public function setPassword(string $password): void
+    public function setPassword(string $password): self
     {
         $this->password = $password;
         return $this;
     }
-    public function setPasswordConfirm(string $password_confirm): void
+    public function setPasswordConfirm(string $password_confirm): self
     {
         $this->password_confirm = $password_confirm;
         return $this;
     }
-    public function setEmail(string $email): void
+    public function setEmail(string $email): self
     {
         $this->email = $email;
         return $this;
     }
-    public function setCsrftoken(?string $csrftoken): void
+    public function setCsrftoken(?string $csrftoken): self
     {
         $this->csrftoken = $csrftoken;
         return $this;

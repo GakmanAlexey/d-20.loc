@@ -15,7 +15,7 @@ class Register extends \Modules\Abs\Controller
 
         $start = new \Modules\User\Modul\Manager\Register();
         $resultJob = $start->start();
-        
+            $this->data_view["messages"] = $resultJob ["message"]->getErrors() ?? '';
         $this->list_file[] = APP_ROOT . "/modules/user/view/register.php";
         $this->show();
         $this->cashe_end();

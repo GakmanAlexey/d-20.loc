@@ -15,7 +15,13 @@
         "user_banned": "Пользователь забанен"
     },
     "register": {
-        "server_error": "Ошибка сервера, попробуйте позже"
+        "server_error": "Ошибка сервера, попробуйте позже",        
+        "password_confirm": "Пароли не совпадают",
+        "email_required": "Поле email обязательно для заполнения",
+        "email_invalid": "Неверный формат email",
+        "email_too_long": "Email слишком длинный",
+        "username_exists": "Имя пользователя занято",
+        "registration_error": "Ошибка при регистрации, попробуйте снова"
     },
     "recoverypassword": {
         "server_error": "Ошибка сервера, попробуйте позже"

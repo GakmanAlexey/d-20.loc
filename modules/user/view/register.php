@@ -2,14 +2,19 @@
 // Register view
 // Переменные доступны через $this->data_view["название"] 
 // или автоматически если твой движок их извлекает
+$messages = $this->data_view["messages"] ?? '';
 ?>
 <div class="ga_user_container">
     <h1 class="ga_user_title">Регистрация</h1>
     
     <!-- Блок для сообщений об ошибках -->
-    <?php if (!empty($this->data_view["messages"])): ?>
-        <?php echo $this->data_view["messages"]; ?>
-    <?php endif; ?>
+        <?php if ($messages){
+        echo '<div class="ga_user_error">';
+        foreach ($messages as $error) {
+            echo '<p>' . htmlspecialchars($error) . '</p>';
+        }
+        echo '</div>';
+    } ?>
     
     <form method="post" class="ga_user_form">
         <!-- CSRF токен -->

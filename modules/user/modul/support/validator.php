@@ -30,7 +30,22 @@ class Validator
         return ["status" => true];
     }
 
-    
+    public function validateRegister(\Modules\User\Modul\Support\Messenger $massager, \Modules\User\Modul\Form\Register $forRegister)
+    {
+        if(!$this->validateUsername($massager, $forRegister->getUsername())) {
+                return ["status" => false, "message" => $massager];
+        }
+        if(!$this->validatePassword($massager, $forRegister->getPassword())) {
+                return ["status" => false, "message" => $massager];
+        }
+        if(!$this->validatePasswordConfirm($massager, $forRegister->getPassword(),$forRegister->getPasswordConfirm())) {
+                return ["status" => false, "message" => $massager];
+        }
+        if(!$this->validatePasswordEmail($massager, $forRegister->getEmail())) {
+                return ["status" => false, "message" => $massager];
+        }
+        return ["status" => true];
+    }  
 
 
 
@@ -70,6 +85,31 @@ class Validator
         }
         if (mb_strlen($password) > $max) {
             $massager->addError(str_replace('{max_pass}', $max, $this->lang["login"]['password_too_long']));
+            return false;
+        }
+        return true;
+    }
+
+    public function validatePasswordConfirm(\Modules\User\Modul\Support\Messenger $massager, $password, $password_confirm){
+        if($password !== $password_confirm){
+            $massager->addError(str_replace('{min_pass}', $min, $this->lang["register"]['password_confirm']));
+            return false;
+        }
+        return true;
+    }
+
+    public function validatePasswordEmail(\Modules\User\Modul\Support\Messenger $massager, $email){
+        $email = trim($email);
+        if (empty($email)) {
+            $massager->addError($this->lang["register"]['email_required']);
+            return false;
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $massager->addError($this->lang["register"]['invalid_email']);
+            return false;
+        }
+        if (strlen($email) > 254) {
+            $massager->addError($this->lang["register"]['email_too_long']);
             return false;
         }
         return true;
