@@ -11,6 +11,9 @@ class Core extends \Modules\Abs\Handler{
         try {
 
             Env::load();
+               
+            \Modules\Core\Modul\Menu::build();          
+            \Modules\Router\Modul\Router::start();
 
             if (Env::get("APP_DEBUG") == "true") {
                 $this->APP_DEBUG_TRUE();
@@ -31,8 +34,6 @@ class Core extends \Modules\Abs\Handler{
             $authToken = new \Modules\User\Modul\Manager\Remember;
             $authToken->autoAuth();
 
-            \Modules\Core\Modul\Menu::build();          
-            \Modules\Router\Modul\Router::start();
 
         } catch (\Throwable $e) {
             $this->handleThrowable($e);

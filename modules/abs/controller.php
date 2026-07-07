@@ -125,7 +125,7 @@ abstract class Controller{
     public function cashe_start(){        
         $this->cache_isset = false;
         if(\Modules\Core\Modul\Env::get("VIEW_CACHE") != "true") return;        
-        $file_name = md5(\Modules\Core\Modul\Router::$url["d_line"]."g".\Modules\Core\Modul\Router::$url["d_of_get_line"]);
+        $file_name = md5(\Modules\Router\Modul\Router::$url["d_line"]."g".\Modules\Router\Modul\Router::$url["d_of_get_line"]);
         $this->cache_filename = APP_ROOT.DS.'cache'.DS.$file_name.'.cache';
 
         if (file_exists($this->cache_filename)) {
