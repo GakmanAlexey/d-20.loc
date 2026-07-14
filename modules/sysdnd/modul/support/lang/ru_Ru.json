@@ -1,0 +1,31 @@
+{
+    "login": {
+        "server_error": "Ошибка сервера, попробуйте позже",
+        "common_required": "Поле обязательно для заполнения",
+        "username_too_short": "Имя пользователя должно быть не менее {min_username} символов",
+        "username_too_long": "Имя пользователя должно быть не более {max_username} символов",
+        "password_too_short": "Пароль должен быть не менее {min_pass} символов",
+        "password_too_long": "Пароль должен быть не более {max_pass} символов",
+        "login_required": "Поле логин обязательно для заполнения",
+        "password_required": "Поле пароль обязательно для заполнения",
+        "invalid_csrf_token": "Недействительный CSRF токен, попробуйте снова",
+        "user_not_found": "Пользователь не найден",
+        "invalid_password": "Неверный пароль",
+        "inactive_account": "Учетная запись не активирована",
+        "user_banned": "Пользователь забанен"
+    },
+    "register": {
+        "server_error": "Ошибка сервера, попробуйте позже",        
+        "password_confirm": "Пароли не совпадают",
+        "email_required": "Поле email обязательно для заполнения",
+        "email_invalid": "Неверный формат email",
+        "email_too_long": "Email слишком длинный",
+        "username_exists": "Имя пользователя занято",
+        "registration_error": "Ошибка при регистрации, попробуйте снова",
+        "error_token_confirm_email": "Неверный токен подтверждения email",
+        "token_dont_isset": "Токен устарел"
+    },
+    "recoverypassword": {
+        "server_error": "Ошибка сервера, попробуйте позже"
+    }
+}

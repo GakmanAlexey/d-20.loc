@@ -1,6 +1,6 @@
 {
-    "generated_at": "2026-03-27 23:45:08",
-    "routes_count": 36,
+    "generated_at": "2026-07-14 20:46:34",
+    "routes_count": 26,
     "routes": [
         {
             "path": "/admin/",
@@ -63,10 +63,28 @@
             "module": "core"
         },
         {
+            "path": "/nexus/",
+            "class": "Modules\\Nexus\\Controller\\Index",
+            "method": "Nexus",
+            "module": "nexus"
+        },
+        {
             "path": "/ajax/service/router/start/",
             "class": "Modules\\Router\\Controller\\Adminajax",
             "method": "start",
             "module": "router"
+        },
+        {
+            "path": "/nexus/",
+            "class": "Modules\\Nexus\\Controller\\Index",
+            "method": "Nexus",
+            "module": "sysdnd"
+        },
+        {
+            "path": "/nexus/taverna-mirov/",
+            "class": "Modules\\Systv\\Controller\\Nexus",
+            "method": "Nexus",
+            "module": "systv"
         },
         {
             "path": "/user/login/",
@@ -139,84 +157,6 @@
             "class": "Modules\\User\\Controller\\Index",
             "method": "password_recovery_success",
             "module": "user"
-        },
-        {
-            "path": "/user/login/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "login",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/logout/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "logout",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/login/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "login_success",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/register/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "register",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/register/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "register_success",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/profile/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "profile",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/change-password/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "change_password",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/verify/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "verify_id",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/verify/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "verify_success",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/verify/failure/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "verify_failure",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/recovery/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "password_recovery",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/recovery/step2/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "password_recovery_2step",
-            "module": "user copy"
-        },
-        {
-            "path": "/user/recovery/success/",
-            "class": "Modules\\User\\Controller\\Index",
-            "method": "password_recovery_success",
-            "module": "user copy"
         }
     ]
 }
