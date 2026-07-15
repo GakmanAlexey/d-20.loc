@@ -45,4 +45,17 @@ class Myths
 
         return $stmt;
     }
+
+    public function getMyth($mythsID){
+
+        $pdo = \Modules\Core\Modul\Sql::connect();        
+        $tableName = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'myths';
+        
+        $stmt = $pdo->prepare("SELECT * FROM `{$tableName}` WHERE `id` = :mythsID");  
+        
+        $stmt->bindValue(':mythsID', $mythsID, \PDO::PARAM_INT);
+        $stmt->execute();         
+        return $stmt;
+
+    }
 }

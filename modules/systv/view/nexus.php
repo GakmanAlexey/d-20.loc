@@ -18,7 +18,7 @@
 
 
 Лор:<br>
-    Мифы<br>
+    <a href="/nexus/taverna-mirov/myths/">Мифы</a><br>
     События<br>
 
     История игр<br>
@@ -30,5 +30,5 @@
 
 <br><br>
 Системное:<br>
-Эпохи<br>
+<a href="/nexus/taverna-mirov/era/">эры</a><br>
 Регионы<br>

@@ -1,6 +1,6 @@
 {
-    "generated_at": "2026-07-15 18:02:46",
-    "routes_count": 28,
+    "generated_at": "2026-07-15 20:09:01",
+    "routes_count": 30,
     "routes": [
         {
             "path": "/admin/",
@@ -95,6 +95,18 @@
         {
             "path": "/nexus/taverna-mirov/era/open/",
             "class": "Modules\\Systv\\Controller\\Era",
+            "method": "open",
+            "module": "systv"
+        },
+        {
+            "path": "/nexus/taverna-mirov/myths/",
+            "class": "Modules\\Systv\\Controller\\Myths",
+            "method": "index",
+            "module": "systv"
+        },
+        {
+            "path": "/nexus/taverna-mirov/myths/open/",
+            "class": "Modules\\Systv\\Controller\\Myths",
             "method": "open",
             "module": "systv"
         },
