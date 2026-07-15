@@ -14,4 +14,19 @@ class Era
         return $stmt;
 
     }
+
+    public function getEra($eraID){
+
+        $pdo = \Modules\Core\Modul\Sql::connect();        
+        $tableName = \Modules\Core\Modul\Env::get("DB_PREFIX") . 'myth_eras';
+        
+        $stmt = $pdo->prepare("SELECT * FROM `{$tableName}` WHERE `id` = :eraid");  
+        
+        $stmt->bindValue(':eraid', $eraID, \PDO::PARAM_INT);
+        $stmt->execute();         
+        return $stmt;
+
+    }
+
+
 }

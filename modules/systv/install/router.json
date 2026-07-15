@@ -1,4 +1,5 @@
 [
     ["/nexus/taverna-mirov/", "Modules\\Systv\\Controller\\Nexus", "Nexus"],
-    ["/nexus/taverna-mirov/era/", "Modules\\Systv\\Controller\\Era", "index"]
+    ["/nexus/taverna-mirov/era/", "Modules\\Systv\\Controller\\Era", "index"],
+    ["/nexus/taverna-mirov/era/open/", "Modules\\Systv\\Controller\\Era", "open"]
 ]

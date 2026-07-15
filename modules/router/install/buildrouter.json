@@ -1,10 +1,10 @@
 {
-    "generated_at": "2026-07-15 13:59:05",
+    "generated_at": "2026-07-15 18:02:46",
     "sources": {
         "json_routes": 0,
         "sql_routes": 0
     },
-    "routes_count": 26,
+    "routes_count": 27,
     "routes": [
         {
             "path": "/admin/",
@@ -88,6 +88,12 @@
             "path": "/nexus/taverna-mirov/era/",
             "class": "Modules\\Systv\\Controller\\Era",
             "method": "index",
+            "module": "systv"
+        },
+        {
+            "path": "/nexus/taverna-mirov/era/open/",
+            "class": "Modules\\Systv\\Controller\\Era",
+            "method": "open",
             "module": "systv"
         },
         {

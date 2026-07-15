@@ -1,13 +1,12 @@
 тут будет список эр
 
 <?php
-$eraList = $this->data_view["eracollection"]->getAll();
-foreach($eraList as $era){
+$era = $this->data_view["eraData"];
     echo "<br>";
     
-    echo "ид эры: <a href='/nexus/taverna-mirov/era/open/?era=".$era->getId()."'>";
+    echo "ид эры: ";
     echo $era->getId();
-    echo "</a><br>";
+    echo "<br>";
     echo "Название эры: ";
     echo $era->getName();
     echo "<br>";
@@ -24,5 +23,5 @@ foreach($eraList as $era){
     echo $era->getCreatedAt();
     echo "<br>";
     echo "<br>";
-}
+
 ?>
