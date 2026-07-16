@@ -57,7 +57,7 @@ class Source
 
     public function setSlug($slug): self
     {
-        $this->slog = $slug;
+        $this->slug = $slug;
         return $this;
     }
 
