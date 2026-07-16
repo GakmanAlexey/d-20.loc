@@ -1,6 +1,7 @@
 тут будет список эр
 
 <?php
+
 $era = $this->data_view["eraData"];
     echo "<br>";
     

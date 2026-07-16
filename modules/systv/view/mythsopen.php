@@ -4,11 +4,11 @@
 $myth = $this->data_view["mythsData"];
     echo "<br>";
     
-    echo "ид эры: ";
+    echo "ид мифа: ";
     echo $myth->getId();
     echo "<br>";
      echo "Ид эпохи: ";
-    echo $myth->geteraId();
+    echo \Modules\Systv\Modul\Support\Era::getNameFromId($myth->geteraId());
     echo "<br>";
     echo "Название мифа: ";
     echo $myth->getTitle();
