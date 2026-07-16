@@ -2,9 +2,9 @@
 
 namespace Modules\Sysdnd\Controller;
 
-class Index extends \Modules\Abs\Controller
+class Magicitem extends \Modules\Abs\Controller
 {
-    public function Nexus()
+    public function Main()
     {
         $this->cashe_start();
         if ($this->cache_isset) return;
@@ -15,7 +15,7 @@ class Index extends \Modules\Abs\Controller
 
         //тут обработка
 
-        $this->list_file[] = APP_ROOT . "/modules/sysdnd/view/nexus.php";
+        $this->list_file[] = APP_ROOT . "/modules/sysdnd/view/magicitem.php";
         $this->show();
         $this->cashe_end();
     }

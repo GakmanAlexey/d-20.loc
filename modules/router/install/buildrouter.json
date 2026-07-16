@@ -1,10 +1,10 @@
 {
-    "generated_at": "2026-07-15 20:09:01",
+    "generated_at": "2026-07-16 13:09:13",
     "sources": {
         "json_routes": 0,
         "sql_routes": 0
     },
-    "routes_count": 29,
+    "routes_count": 32,
     "routes": [
         {
             "path": "/admin/",
@@ -77,6 +77,24 @@
             "class": "Modules\\Router\\Controller\\Adminajax",
             "method": "start",
             "module": "router"
+        },
+        {
+            "path": "/nexus/dnd5e/",
+            "class": "Modules\\Sysdnd\\Controller\\Nexus",
+            "method": "Nexus",
+            "module": "sysdnd"
+        },
+        {
+            "path": "/nexus/dnd5e/source/",
+            "class": "Modules\\Sysdnd\\Controller\\source",
+            "method": "Main",
+            "module": "sysdnd"
+        },
+        {
+            "path": "/nexus/dnd5e/magicitem/",
+            "class": "Modules\\Sysdnd\\Controller\\Magicitem",
+            "method": "Main",
+            "module": "sysdnd"
         },
         {
             "path": "/nexus/taverna-mirov/",

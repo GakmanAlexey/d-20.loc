@@ -1,6 +1,6 @@
 {
-    "generated_at": "2026-07-15 20:09:01",
-    "routes_count": 30,
+    "generated_at": "2026-07-16 13:09:13",
+    "routes_count": 32,
     "routes": [
         {
             "path": "/admin/",
@@ -75,9 +75,21 @@
             "module": "router"
         },
         {
-            "path": "/nexus/",
-            "class": "Modules\\Nexus\\Controller\\Index",
+            "path": "/nexus/dnd5e/",
+            "class": "Modules\\Sysdnd\\Controller\\Nexus",
             "method": "Nexus",
+            "module": "sysdnd"
+        },
+        {
+            "path": "/nexus/dnd5e/source/",
+            "class": "Modules\\Sysdnd\\Controller\\source",
+            "method": "Main",
+            "module": "sysdnd"
+        },
+        {
+            "path": "/nexus/dnd5e/magicitem/",
+            "class": "Modules\\Sysdnd\\Controller\\Magicitem",
+            "method": "Main",
             "module": "sysdnd"
         },
         {

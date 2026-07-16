@@ -2,8 +2,10 @@
 
 namespace Modules\Sysdnd\Controller;
 
-class Index extends \Modules\Abs\Controller
+class Nexus extends \Modules\Abs\Controller
 {
+
+
     public function Nexus()
     {
         $this->cashe_start();
