@@ -1,5 +1,6 @@
 [
     ["/nexus/dnd5e/", "Modules\\Sysdnd\\Controller\\Nexus", "Nexus"],
-    ["/nexus/dnd5e/source/", "Modules\\Sysdnd\\Controller\\source", "Main"],
+    ["/nexus/dnd5e/source/", "Modules\\Sysdnd\\Controller\\Source", "Main"],
+    ["/nexus/dnd5e/source/open/", "Modules\\Sysdnd\\Controller\\Source", "Open"],
     ["/nexus/dnd5e/magicitem/", "Modules\\Sysdnd\\Controller\\Magicitem", "Main"]
 ]

@@ -1,10 +1,10 @@
 {
-    "generated_at": "2026-07-16 14:17:25",
+    "generated_at": "2026-07-21 19:35:33",
     "sources": {
         "json_routes": 0,
         "sql_routes": 0
     },
-    "routes_count": 32,
+    "routes_count": 33,
     "routes": [
         {
             "path": "/admin/",
@@ -86,8 +86,14 @@
         },
         {
             "path": "/nexus/dnd5e/source/",
-            "class": "Modules\\Sysdnd\\Controller\\source",
+            "class": "Modules\\Sysdnd\\Controller\\Source",
             "method": "Main",
+            "module": "sysdnd"
+        },
+        {
+            "path": "/nexus/dnd5e/source/open/",
+            "class": "Modules\\Sysdnd\\Controller\\Source",
+            "method": "Open",
             "module": "sysdnd"
         },
         {

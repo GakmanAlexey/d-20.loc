@@ -1,7 +1,7 @@
 Источник
 
 <?php
-foreach($this->data_view["sourceCollection"]->getAll() as $source){
+ $source = $this->data_view["sourceData"];
     echo "<br>";
     
     echo "ид Источника: <a href='/nexus/dnd5e/source/open/?source=".$source->getId()."'>";
@@ -54,6 +54,6 @@ foreach($this->data_view["sourceCollection"]->getAll() as $source){
     echo "<br>";
 
     echo "<br>";
-}
+
 
 ?>

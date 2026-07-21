@@ -6,43 +6,47 @@ class Source
 {
     //тут все переделать
     public function showInf(){    
-        if(isset($_GET["myths"])){
-            $myths_id = (int)$_GET["myths"];
+        if(isset($_GET["source"])){
+            $source_id = (int)$_GET["source"];
         }else{
-            $myths_id = 1;
+            $source_id = 1;
         }
 
-        $mythsReposetory =  new \Modules\Systv\Modul\Repository\Myths;
-        $mythsRes = $mythsReposetory->getMyth($myths_id);
-        $mythsMent = $mythsRes->fetch(\PDO::FETCH_ASSOC);
+        $sourceReposetory =  new \Modules\Sysdnd\Modul\Repository\Source;
+        $sourceRes = $sourceReposetory->getSource($source_id);
+        $sourceMent = $sourceRes->fetch(\PDO::FETCH_ASSOC);
 
-        $myths = new \Modules\Systv\Modul\Entity\Myth;
-        if(isset($mythsMent["id"]) and ($mythsMent["id"] >= 1)){            
-            $myths->setId($mythsMent["id"])
-                ->setEraId($mythsMent["era_id"])
-                ->setTitle($mythsMent["title"])
-                ->setSlug($mythsMent["slug"])
-                ->setOrderNum($mythsMent["order_num"])
-                ->setShortText($mythsMent["short_text"])
-                ->setContent($mythsMent["content"])
-                ->setStatus($mythsMent["status"])
-                ->setCreatedAt($mythsMent["created_at"])
-                ->setUpdatedAt($mythsMent["updated_at"]);
+        $source = new \Modules\Sysdnd\Modul\Entity\Source;
+        if(isset($sourceMent["id"]) and ($sourceMent["id"] >= 1)){            
+            $source->setId($sourceMent["id"])
+                ->setNameRu($sourceMent["name_ru"])
+                ->setName($sourceMent["name"])
+                ->setSlug($sourceMent["slug"])
+                ->setMicroLabel($sourceMent["micro_label"])
+                ->setDescription($sourceMent["description"])
+                ->setStatus($sourceMent["status"])
+                ->setIdIMG($sourceMent["id_img"])
+                ->setDatePublisher($sourceMent["date_publisher"])
+                ->setStudio($sourceMent["studio"])
+                ->setDateCreate($sourceMent["date_create"])
+                ->setDateUpdate($sourceMent["date_update"]);
         }else{
-            $myths->setId(0)
-                ->setEraId(0)
-                ->setTitle("")
+             $source->setId(0)
+                ->setNameRu("")
+                ->setName("")
                 ->setSlug("")
-                ->setOrderNum(0)
-                ->setShortText("")
-                ->setContent("")
+                ->setMicroLabel("")
+                ->setDescription("")
                 ->setStatus("")
-                ->setCreatedAt("")
-                ->setUpdatedAt("");
+                ->setIdIMG(0)
+                ->setDatePublisher("")
+                ->setStudio("")
+                ->setDateCreate("")
+                ->setDateUpdate("");
 
         }
 
-        return $myths ;
+        return $source ;
 
 
     }
