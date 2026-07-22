@@ -2,5 +2,12 @@
     ["/nexus/dnd5e/", "Modules\\Sysdnd\\Controller\\Nexus", "Nexus"],
     ["/nexus/dnd5e/source/", "Modules\\Sysdnd\\Controller\\Source", "Main"],
     ["/nexus/dnd5e/source/open/", "Modules\\Sysdnd\\Controller\\Source", "Open"],
-    ["/nexus/dnd5e/magicitem/", "Modules\\Sysdnd\\Controller\\Magicitem", "Main"]
+    ["/nexus/dnd5e/magicitem/", "Modules\\Sysdnd\\Controller\\Magicitem", "Main"],
+
+
+
+
+    ["/admin/dnd/", "Modules\\Sysdnd\\Controller\\Admin", "dndmain"],
+    ["/admin/dnd/dndsource/", "Modules\\Sysdnd\\Controller\\Admin", "dndsource"],
+    ["/admin/dnd/dndmagicitem/", "Modules\\Sysdnd\\Controller\\Admin", "dndmagicitem"]
 ]
